@@ -209,3 +209,38 @@ width: 10%;
 {
    color: black;
 }
+.consult
+{
+ margin-left: 320px;
+  margin-top: 50px;
+}
+.par 
+{  color: black;
+    width: 200px;
+    font-size: 20px;
+  margin-top: 20px;
+
+}
+.info
+{
+    width: 350px;
+    height: 320px;;
+    background-color:  rgba(105, 103, 103, 0.2);
+    border: 2px solid #ffffff;
+    border-radius: 10%;
+    margin-left: 70px;
+    padding: 8px;
+    color: #470f0f;
+    font-size: 17px;
+    margin-top: 10px;
+}
+.but2
+{
+    width: 100px;
+    margin-left: 1000px;margin-top: 20px;
+}
+.rep 
+{
+    color: antiquewhite ;
+    font-size: 20px;
+}

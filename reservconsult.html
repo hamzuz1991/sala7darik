@@ -48,14 +48,86 @@
     </div>
     <div class="consult">
     <form class="form-inline">
-           
+           <div class="par">Entrer votre identifient de votre reservation pour le consulter </div>
             <div class="form-group mx-sm-3 mb-2">
               <label for="inputPassword2" class="sr-only">Password</label>
               <input type="text" class="form-control" id="inputidreserv" placeholder="id reservation">
             </div>
-            <button type="submit" class="btn btn-outline-dark mb-2">consulter</button>
+            <button type="submit" class="btn btn-warning mb-2">consulter</button>
           </form>
         </div>
+        <table>
+        <tr>
+      <td>  <form class="info" >
+            numero reservation : <br>
+            <p class="rep" id="idreservation"></p>
+            Date : <br>
+            <p class="rep" id="date"></p>
+            Heure: <br>
+            <p class="rep" id="heure"></p>
+            Etat :
+            <p class="rep" id="etat"></p>
+        </form></td>
+        <td><form class="info"> 
+            
+                Nom client  : <br>
+                <p class="rep" id="nomclient"></p>
+                prenom client  : <br>
+                <p class="rep" id="prenomclient"></p>
+                Adresse: <br>
+                <p class="rep" id="adresseclient"></p>
+                Email :
+                <p class="rep" id="emailclient"></p>
+                Numero tel : :
+                <p class="rep" id="telclient"></p>
+            </form></td>
+            <td><form class="info"> 
+            
+                    Nom commercant  : <br>
+                    <p class="rep" id="nomclient"></p>
+                    prenom commercent  : <br>
+                    <p class="rep" id="prenomclient"></p>
+                    specialite commercent  : <br>
+                    <p class="rep" id="profession"></p>
+                    Adresse: <br>
+                    <p class="rep" id="adresseclient"></p>
+                    Email :
+                    <p class="rep" id="emailcommercant"></p>
+                    Numero tel : 
+                    <p class="rep" id="telclient"></p>
+                </form></td>
+            </tr>
+            </table>
+            <div class="but2">
+  
+                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">envoyer reclamation</button>
+            </div>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Recipient:</label>
+            <input type="text" class="form-control" id="emailcommercant">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
     </body>
     <footer>
     
