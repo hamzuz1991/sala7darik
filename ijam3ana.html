@@ -18,7 +18,7 @@
     <script src="ijma3ana.js"></script>
 </head>
 
-<body onload="badel()">
+<body>
     <div class="inn">
         <div class="h-control">
             <div class="h-logoo">
@@ -29,19 +29,20 @@
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Services</a></li>
-                    <li>
+
+                    <li><a href="aboutus.html">About Us</a></li>
+
+                    <li class="activ">
                         <dic class="dropdownn">
-                            <a href="#">SallaH Darek</a>
+                            <a>Ija m3ana</a>
                             <div class="dropdownn-content">
-                                <ul>
-                                    <li><a href="#" class="a-dropdownn">Reservez</a></li>
-                                    <li><a href="#" class="a-dropdownn">Consultez</a></li>
+                                <ul id="inputStatut">
+                                    <li><a href="reservconsult.html" class="a-dropdownn" value="client">client</a></li>
+                                    <li><a href="ijam3ana.html" class="a-dropdownn" value="commercant">commercant</a></li>
                                 </ul>
                             </div>
                         </dic>
                     </li>
-                    <li><a href="aboutus.html">About Us</a></li>
-                    <li class="activ">Ija m3ana</li>
                 </ul>
             </div>
         </div>
@@ -57,11 +58,11 @@
                         rejoundre.
                     </p>
 
-                   
+
                     <form class="sin">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                                 placeholder="Enter email">
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                                 else.</small>
@@ -75,155 +76,156 @@
                             <label class="form-check-label" for="exampleCheck1">Check me out</label>
                         </div>
                         <div class="but">
-                        <button type="submit" class="btn btn-outline-dark">Submit</button>  <b>OU</b>
-                    
-                        <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">
+                            <button type="submit" class="btn btn-outline-dark">Submit</button> <b>OU</b>
+
+                            <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">
                                 Inscrire
-                              </button>                    </div>
+                            </button> </div>
                     </form>
                 </td>
                 <td>
     </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Welcome</h5>
-                 
-                <div  class="modal-body">
-                        <div class="login" >
-                                <form>
-                                    <div class="form-row">
-                                            <div class="form-group col-md-8">
-                                                    <label for="inputStatut">statut*</label>
-                                                    <select onchange="badel()" id="inputStatut" class="form-control">
-                                                       
-                                                        <option value="client">client</option>
-                                                        <option value="commercant">commercant</option>
-                                                    </select>
-                                                </div>
-                                                
-                                        <div class="form-group col-md-6">
-                                            <label for="inputEmail4">Nom*</label>
-                                            <input type="text" class="form-control" id="inputfirstname" placeholder="firstname">
-                                        </div> <br>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputPassword4">Prenom*</label>
-                                            <input type="text" class="form-control" id="inputlastname" placeholder="lastname">
-                                        </div>
-                                        
-                                        <div id="comm" class="form-group col-md-6">
-            
-                                            <label for="inputState">Domaines*</label>
-                                            <select onchange="domaine()" id="inputselectdom" class="form-control">
-                                                <option selected> </option>
-                                                <option value="Electrique">Electrique </option>
-                                                <option value="Planperie">Planperie</option>
-                                                <option value="Peinture">Peinture</option>
-                                                <option value="Batiment">Batiment</option>
-                                                <option value="autres">autre</option>
-                                            </select>
-                                        </div>
-                                        <div id="comm1" class="form-group col-md-4">
-            
-                                            <label for="inputState">Proffession*</label>
-                                            <select id="inputState1" class="form-control">
-                                                <option selected> </option>
-                                                <option>
-                                                    <p id="p1"></p>
-                                                </option>
-                                                <option>
-                                                    <p id="p2"></p>
-                                                </option>
-                                                <option>
-                                                    <p id="p3"></p>
-                                                </option>
-                                                <option>
-                                                    <p id="p3"></p>
-                                                </option>
-                                                <option>
-                                                    <p id="p4"></p>
-                                                </option>
-                                                <option>
-                                                    <p id="p5"></p>
-                                                </option>
-                                            </select>
-                                        </div>
-            
-                                        <div class="form-group col-md-6">
-                                            <label for="inputEmail4">Email*</label>
-                                            <input  onblur="verifemail()" type="email" class="form-control" id="inputEmail4" placeholder="Email"> <p id="vemail"> </p>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputPassword4">Mot de Passe*</label>
-                                            <input  onblur="verifpass()" type="password" class="form-control" id="inputPassword4" placeholder="Password"><p id="vpass"> </p>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputTel">Tel.portable*</label>
-                                            <input type="text" class="form-control" id="inputTel.portable" placeholder="Tel.portable">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputtelf">Tel.fix</label>
-                                            <input type="text" class="form-control" id="inputTel.fix" placeholder="Tel.fix">
-                                        </div>
+                    <h5 class="modal-title" id="exampleModalLabel">Welcome</h5>
+
+                    <div class="modal-body">
+                        <p id="logcom"></p>
+                        <div id="login" class="login">
+                            <form>
+                                <div class="form-row">
+
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Nom*</label>
+                                        <input type="text" class="form-control" id="inputfirstname" placeholder="firstname">
+                                    </div> <br>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPassword4">Prenom*</label>
+                                        <input type="text" class="form-control" id="inputlastname" placeholder="lastname">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="inputAddress">Address*</label>
-                                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+
+                                    <div id="comm" class="form-group col-md-6">
+
+                                        <label for="inputState">Domaines*</label>
+                                        <select onchange="domaine()" id="inputselectdom" class="form-control">
+                                            <option selected> </option>
+                                            <option value="Electrique">Electrique </option>
+                                            <option value="Planperie">Planperie</option>
+                                            <option value="Peinture">Peinture</option>
+                                            <option value="Batiment">Batiment</option>
+                                            <option value="autres">autre</option>
+                                        </select>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="inputAddress2">Address 2</label>
-                                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                    <div id="comm1" class="form-group col-md-4">
+
+                                        <label for="inputState">Proffession*</label>
+                                        <select id="inputState1" class="form-control">
+                                            <option selected> </option>
+                                            <option>
+                                                <p id="p1"></p>
+                                            </option>
+                                            <option>
+                                                <p id="p2"></p>
+                                            </option>
+                                            <option>
+                                                <p id="p3"></p>
+                                            </option>
+                                            <option>
+                                                <p id="p3"></p>
+                                            </option>
+                                            <option>
+                                                <p id="p4"></p>
+                                            </option>
+                                            <option>
+                                                <p id="p5"></p>
+                                            </option>
+                                        </select>
                                     </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-4">
-                                            <label for="inputCity">City*</label>
-                                            <input type="text" class="form-control" id="inputCity">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label for="inputState">Gouvernemt*</label>
-                                            <select id="inputState2" class="form-control">
-                                                <option selected>Choose...</option>
-                                                <option value="tunis">Tunis</option>
-                                                <option value="ariana">Ariana</option>
-                                                <option value=" ben arous">Ben Arous</option>
-                                                <option value="mannouba">Mannouba</option>
-                                                <option>autre</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group col-md-2">
-                                            <label for="inputZip">C.Postal*</label>
-                                            <input type="text" class="form-control" id="inputZip">
-                                        </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Email*</label>
+                                        <input onblur="verifemail()" type="email" class="form-control" id="inputEmail4"
+                                            placeholder="Email">
+                                        <p id="vemail"> </p>
                                     </div>
-                                    <div class="form-group">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                                            <label class="form-check-label" for="gridCheck">
-                                                    <p id="cmtco"> Attention . on cas votre abbonment sera expire votre profil sera invisible jusq'au
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPassword4">Mot de Passe*</label>
+                                        <input onblur="verifpass()" type="password" class="form-control" id="inputPassword4"
+                                            placeholder="Password">
+                                        <p id="vpass"> </p>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputTel">Tel.portable*</label>
+                                        <input type="text" class="form-control" id="inputTel.portable" placeholder="Tel.portable">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputtelf">Tel.fix</label>
+                                        <input type="text" class="form-control" id="inputTel.fix" placeholder="Tel.fix">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress">Address*</label>
+                                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Address 2</label>
+                                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="inputCity">City*</label>
+                                        <input type="text" class="form-control" id="inputCity">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="inputState">Gouvernemt*</label>
+                                        <select id="inputState2" class="form-control">
+                                            <option selected>Choose...</option>
+                                            <option value="tunis">Tunis</option>
+                                            <option value="ariana">Ariana</option>
+                                            <option value=" ben arous">Ben Arous</option>
+                                            <option value="mannouba">Mannouba</option>
+                                            <option>autre</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="inputZip">C.Postal*</label>
+                                        <input type="text" class="form-control" id="inputZip">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                                        <label class="form-check-label" for="gridCheck">
+                                            <p > Attention . on cas votre abbonment sera expire votre profil
+                                                sera invisible jusq'au
                                                 vous
                                                 changer
                                                 votre status d'abbonement </p>
-                                               <p id="cmtc"> Attention . apres chaque resarvation realise il faut donner votre avis  pour  nous aider a vous donnez le meilleur rtoujours </p>
-                                            </label>
-                                        </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button onclick="verifform()" type="button" class="btn btn-primary">Save </button>
-                </div>
-              </div>
-            </div>
-          </div>
-                
-
+                                          
+                                        </label>
+                                    </div>
+                                </div>
                         </div>
-                       
-                       
-                    </form>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button onclick="verifform()" type="button" class="btn btn-primary" id="save">Save </button>
+                            <p id="sign"></p>
+                        </div>
+
+                    </div>
                 </div>
+
+
             </div>
+
+
+            </form>
         </div>
+    </div>
+    </div>
     </div>
     </td>
     </tr>
