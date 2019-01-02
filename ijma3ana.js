@@ -1,6 +1,6 @@
 function verifform() {
 
-    
+
     var nom = document.getElementById('inputfirstname').value;
     var prenom = document.getElementById('inputlastname').value;
     console.log(prenom);
@@ -21,10 +21,10 @@ function verifform() {
         return false
     } else {
         x.style.display = "none";
-       
+
         y.style.display = "none";
         document.getElementById('logcom').innerHTML = "vous pouver utuliser notre site comme un commerct e notre site";
-       
+
         mytab();
         return true
     }
@@ -35,25 +35,25 @@ function verifform2() {
     var nom = document.getElementById('inputfirstname').value;
     var prenom = document.getElementById('inputlastname').value;
     console.log(prenom);
- 
+
     var adress = document.getElementById('inputAddress').value;
     var gouv = document.getElementById('inputCity').value;
     var codep = document.getElementById('inputZip').value;
-   
+
     var x1 = document.getElementById("login1");
     var y = document.getElementById("save");
 
 
 
-    if ((nom == "") || (prenom == "")   || (adress == "") || (gouv == "") || (codep == "") || (!verifemail) || (!verifpass) || (!veriftel)) {
+    if ((nom == "") || (prenom == "") || (adress == "") || (gouv == "") || (codep == "") || (!verifemail) || (!verifpass) || (!veriftel)) {
         console.log("erreur");
         document.getElementById('sign').innerHTML = "ereue";
         return false
     } else {
-    
+
         x1.style.display = "none";
         y.style.display = "none";
-       
+
         document.getElementById('logcol').innerHTML = "vous pouver reservez sur notre site";
         mytab();
         return true
@@ -73,17 +73,17 @@ function mytab() {
     var password = document.getElementById('inputPassword4').value;
     var tel = document.getElementById('inputTel.portable').value;
     var email = document.getElementById('inputEmail4').value;
-  
-        USER = {
-            email: email,
-            name: nom,
-            lastname: prenom,
-            key: password,
-            Adress: adress,
-            gouvernement: gouv,
-            numero: tel,
-            codepostal: codep,
-        }
+
+    USER = {
+        email: email,
+        name: nom,
+        lastname: prenom,
+        key: password,
+        Adress: adress,
+        gouvernement: gouv,
+        numero: tel,
+        codepostal: codep,
+    }
 
 
     if (doma !== "")
@@ -159,7 +159,7 @@ function verifemail() {
         return false;
     }
 
-   
+
 
 }
 
@@ -234,24 +234,28 @@ function veriftel() {
 
     }
 }
-function loginn()
-{
-    var tuser = JSON.parse(localStorage.getItem("tab"));
-    var Email = document.getElementById('exampleInputEmail1').value;
+function loginn() {
+   
+    var mail = document.getElementById('exampleInputEmail1').value;
+    console.log(mail);
     var pass = document.getElementById('exampleInputPassword1').value;
-  
-    for (let i = 0; i < tuser.length; i++) {
-        tuser[i]= USER ;
-        console.log(tuser[i])
-        if(( USER[email]=Email)&&(USER[key]=pass)){
-           
-    localStorage.setItem("iuser", i);
-            return true ;
+    console.log(pass);
+    if ((mail == "") || (pass == "")) { alert(" login ou/et mp vide"); }
+    else {
+        var tuser = JSON.parse(localStorage.getItem("tab"));
+        console.log(tuser);
+        for (let i = 0; i < tuser.length; i++) {
+            console.log(tuser[i]);
+
+            if ((tuser[i].email == mail) && (tuser[i].key == pass)) {
+               
+                localStorage.setItem("iuser", i);
+                return true;
+            }
+            else {
+                alert(" login ou/et mot passe invalie")
+                return false;
+            }
         }
-       else{
-        document.getElementById('ess').innerHTML = "invalie";
-           return false ;
-       }
-        
     }
 }
