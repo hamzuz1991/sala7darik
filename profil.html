@@ -7,9 +7,10 @@
     <link rel="icon" type="image/png" href="Media/logo.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="profil.css" />
+    <script src="profil.js"></script>
 </head>
-<body>
+<body  onload="checkid()">
     <div class="header-control">
         <div class="header-logo">
             <img src="Media/fff.png" class="logo-control"><p>Sallah Darek</p>
@@ -23,45 +24,61 @@
             </ul>
         </div>   
         <div class="nav-bar-button">
-            <button class="btn" onclick=" window.location.href='C:/Users/Debchi/Desktop/Sala7 Darek/index.html'">Déconnexion</button>
+            <button class="btn" onclick="deconexion()">Déconnexion</button>
         </div>     
     </div>  
     <div class="info-control" >
         <ul>
             <li><h1>Mr :</h1></li>
-            <li><p>Foulaine</p></li>
+            <li><p id="ppnom"></p></li>
             <li><h1>Métier: </h1></li>
-            <li><p>Eléctricien</p></li>
+            <li><p id="ppmetier"></p></li>
             <li><h1>Abonnement</h1></li>
-            <li><p>Actif</p></li>
+            <li><p id="ppabon"></p></li>
             <li><h1>Email: </h1></li>
-            <li><p>foulaine@domaine.com</p></li>
+            <li><p id="ppemail"></p></li>
         </ul>
     </div>
-    <div class="content-control">
+    <div class="content-control-profil">
         <h1>Profil: </h1>        
         <div id="info-profil">
                 <h2>Nom :</h2>
-                <p>Foulaine</p>
+                <p id="pnom"></p></br>
 
                 <h2>Prenom :</h2>
-                <p>Faltaine</p>
+                <p id="pprenom"></p></br>
                 
+                <h2>Domaine :</h2>
+                <p id="pdomaine"></p></br>
+
+                <h2>Profession :</h2>
+                <p id="pprpfession"></p></br>
+
                 <h2>Adresse mail :</h2>
-                <p>foulaine@domaine.com</p>
+                <p id="pemail"></p></br>
                 
-                <h2>Numéro de téléphone :</h2>
-                <p>21345678</p>
+                <h2>Téléphone Portable :</h2>
+                <p id="ptelp"></p></br>
+
+                <h2>téléphone Fixe :</h2>
+                <p id="ptef"></p></br>
                 
                 <h2>Adresse :</h2>
-                <p>32 Rue des roses, Cité Nacer, Tunis-2000</p>
+                <p id="padr"></p></br>
 
-                <h2>Spécialité :</h2>
-                <p>Eléctricien</p>
+                <h2>Adresse 2 :</h2>
+                <p id="padr2"></p></br>
 
-                <h2>Expérience :</h2>
-                <p>3 ans</p>
+                <h2>Cité :</h2>
+                <p id="pcite"></p></br>
+
+                <h2>Gouvernerat :</h2>
+                <p id="pgov"></p></br>
+
+                <h2>Code postale :</h2>
+                <p id="pcp"></p></br>
         </div>
     </div>
+    <div class="modif_profil"></div>
 </body>
 </html>
