@@ -7,9 +7,10 @@
     <link rel="icon" type="image/png" href="Media/logo.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="historique.css" />
+    <script src="historique.js"></script>
 </head>
-<body>
+<body  onload="checkid()">
     <div class="header-control">
         <div class="header-logo">
             <img src="Media/fff.png" class="logo-control"><p>Sallah Darek</p>
@@ -23,52 +24,29 @@
             </ul>
         </div>   
         <div class="nav-bar-button">
-            <button class="btn" onclick=" window.location.href='C:/Users/Debchi/Desktop/Sala7 Darek/index.html'">Déconnexion</button>
+            <button class="btn" onclick="deconexion()">Déconnexion</button>
         </div>     
     </div>  
     <div class="info-control" >
         <ul>
             <li><h1>Mr :</h1></li>
-            <li><p>Foulaine</p></li>
+            <li><p id="ppnom"></p></li>
             <li><h1>Métier: </h1></li>
-            <li><p>Eléctricien</p></li>
+            <li><p id="ppmetier"></p></li>
             <li><h1>Abonnement</h1></li>
-            <li><p>Actif</p></li>
+            <li><p id="ppabon"></p></li>
             <li><h1>Email: </h1></li>
-            <li><p>foulaine@domaine.com</p></li>
+            <li><p id="ppemail"></p></li>
         </ul>
     </div>
-    <div class="content-control">
+    <div class="content-historique">
         <h1>Historique</h1>
-        <div id="info-historique">
-            
-        <h2>Reservation n°12345 :</h2>
-        <p>Installation d'un panneau éléctrique dans la maison du client.</p>
-        <a href="#">Voir la réservation</a>
-        
-        <h2>Reservation n°12345 :</h2>
-        <p>Installation d'un panneau éléctrique dans la maison du client.</p>
-        <a href="#">Voir la réservation</a>
-        
-        <h2>Reservation n°12345 :</h2>
-        <p>Installation d'un panneau éléctrique dans la maison du client.</p>
-        <a href="#">Voir la réservation</a>
-        
-        <h2>Reservation n°12345 :</h2>
-        <p>Installation d'un panneau éléctrique dans la maison du client.</p>
-        <a href="#">Voir la réservation</a>
-        
-        <h2>Reservation n°12345 :</h2>
-        <p>Installation d'un panneau éléctrique dans la maison du client.</p>
-        <a href="#">Voir la réservation</a>
-
-        <h2>Reservation n°12345 :</h2>
-        <p>Installation d'un panneau éléctrique dans la maison du client.</p>
-        <a href="#">Voir la réservation</a>
+        <div id="info-historique">            
+            <h2>Reservation n°12345 :</h2>
+            <p>Installation d'un panneau éléctrique dans la maison du client.</p>
+            <a href="#">Voir la réservation</a>
         </div>
     </div>
-    <div class="detail-reservation">
-        <h1>Détail réservation</h1>
-    </div>
+    <div class="detail-reservation"></div>
 </body>
 </html>
