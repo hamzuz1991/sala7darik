@@ -31,20 +31,10 @@
     text-shadow: 2px 2px rgb(97, 96, 94);
     margin-top: 20px;
 }
-.content-historique a{
-    text-decoration: none;
-    font-family: FreeMono;
-    color: white;
-    font-size: 20px;
-    text-shadow: 1px 1px rgb(97, 96, 94);
-    transition: 1s;
-}
+
 .content-historique p{
     font-family: FreeMono;
     font-size: 18px;
     color: white;
     text-shadow: 1.5px 1.5px rgb(97,96,94);
-}
-.content-historique a:hover{
-    color: #FFD100;
 }
