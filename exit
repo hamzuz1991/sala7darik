@@ -1,0 +1,78 @@
+[33mcommit fbd50f048b9cbb1da82c0cc2526ee88d339b6057[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: CDebchi <debchi_chihebi@users.noreply.github.com>
+Date:   Fri Jan 4 16:28:45 2019 +0100
+
+    Add index and aboutus
+    
+    l'ajout des pages index et about us
+    ainsi que l'ajout du bgi(en dossier media) de la partie commerçant et j'ai renommé la bgi de l'index en bgiindex.jpg (dans le dossier media)
+
+[33mcommit edb68f15abf29a53fbc5664b214885fb5984c7e0[m
+Author: CDebchi <debchi_chihebi@users.noreply.github.com>
+Date:   Fri Jan 4 00:40:54 2019 +0100
+
+    Profil Commerçant
+    
+    Partie profil commerçant
+
+[33mcommit 7a886cda8c2130f2f60770ae4a37379bdf69a304[m
+Author: hamzuz1991 <jlassikhardanihamza@gmail.com>
+Date:   Thu Jan 3 00:11:56 2019 +0100
+
+     complet
+
+[33mcommit 82200a5965168682d337c26f87bd666840ee766b[m
+Author: hamzuz1991 <jlassikhardanihamza@gmail.com>
+Date:   Wed Jan 2 00:00:58 2019 +0100
+
+    reglagelogin
+
+[33mcommit a8e7a8816e9d782da886f088c07720692ab4ddf1[m
+Author: hamzuz1991 <jlassikhardanihamza@gmail.com>
+Date:   Tue Jan 1 20:00:01 2019 +0100
+
+    ecom
+
+[33mcommit 8fd8f0ce1170217f7fb9c7dad83c4e1325d73cdf[m
+Author: hamzuz1991 <jlassikhardanihamza@gmail.com>
+Date:   Fri Dec 28 17:12:10 2018 +0100
+
+    third commit
+
+[33mcommit a089947ea81c8442c7364e4d3a32eee4d129dc2b[m
+Author: hamzuz1991 <jlassikhardanihamza@gmail.com>
+Date:   Thu Dec 27 17:04:12 2018 +0100
+
+    second commit
+
+[33mcommit 55c2345b3dd4633e6f44a555c9e5bd81b3582f7c[m
+Merge: f918f4c 35e4918
+Author: latifazr <zouari_latifa@yahoo.fr>
+Date:   Thu Dec 27 12:16:11 2018 +0100
+
+    fix conflict img
+
+[33mcommit f918f4c5c2b2e5b3b46b66fa417296be4ad95675[m
+Author: latifazr <zouari_latifa@yahoo.fr>
+Date:   Thu Dec 27 12:11:55 2018 +0100
+
+    first commit
+
+[33mcommit 35e4918513e0bf9cedbe531d0a4114822864e814[m
+Merge: 3a90c4a eca339a
+Author: hamzuz1991 <jlassikhardanihamza@gmail.com>
+Date:   Thu Dec 27 12:04:15 2018 +0100
+
+    Merge branch 'master' of https://github.com/hamzuz1991/sala7darik
+
+[33mcommit 3a90c4a3311013e8d96f505a82bfa4caa0fd58f6[m
+Author: hamzuz1991 <jlassikhardanihamza@gmail.com>
+Date:   Thu Dec 27 12:01:32 2018 +0100
+
+    firstcommit
+
+[33mcommit eca339a10f4680f6dbc1258953421ba5e72ddeea[m
+Author: CDebchi <debchi_chihebi@users.noreply.github.com>
+Date:   Thu Dec 27 11:55:36 2018 +0100
+
+    first commit

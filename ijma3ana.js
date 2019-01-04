@@ -253,7 +253,7 @@ function loginn() {
                 return true;
             }
             else {
-                alert(" login ou/et mot passe invalie")
+                alert(" login ou/et mot passe invalie");
                 return false;
             }
         }
