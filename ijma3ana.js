@@ -68,13 +68,18 @@ function mytab() {
     var spec = document.getElementById('inputState1').value;
     var tel = document.getElementById('inputTel.portable').value;
     var adress = document.getElementById('inputAddress').value;
-    var gouv = document.getElementById('inputCity').value;
+    var gouv = document.getElementById('inputState2').value;
     var codep = document.getElementById('inputZip').value;
     var password = document.getElementById('inputPassword4').value;
     var tel = document.getElementById('inputTel.portable').value;
+    var cite = document.getElementById('inputCity').value;
     var email = document.getElementById('inputEmail4').value;
+    var Tfixe = document.getElementById('inputTel.fix').value;
+    var aresse2 = document.getElementById('inputAddress2').value;
+    var code  = Math.floor((Math.random() * 100000) + 1);
 
     USER = {
+        id : code ,
         email: email,
         name: nom,
         lastname: prenom,
@@ -83,11 +88,15 @@ function mytab() {
         gouvernement: gouv,
         numero: tel,
         codepostal: codep,
+        city : cite,
+        telfixe:Tfixe,
+        Adresssec:aresse2,
     }
 
 
     if (doma !== "")
         USER = {
+            id : code ,
             email: email,
             name: nom,
             lastname: prenom,
@@ -98,6 +107,9 @@ function mytab() {
             codepostal: codep,
             domain: doma,
             profession: spec,
+            city : cite,
+            telfixe:Tfixe,
+        Adresssec:aresse2,
         }
     var tuser = JSON.parse(localStorage.getItem("tab")) || [];
     if (tuser == null) {
@@ -250,6 +262,7 @@ function loginn() {
             if ((tuser[i].email == mail) && (tuser[i].key == pass)) {
                
                 localStorage.setItem("iuser", i);
+                ientif();
                 return true;
             }
             else {
@@ -258,4 +271,15 @@ function loginn() {
             }
         }
     }
+}
+function ientif(){
+    var x = localStorage.getItem("iuser");
+    console.log(x);
+    var tuser = JSON.parse(localStorage.getItem("tab"));
+    if (tuser[x].dom!==""){
+        localStorage.setItem("iusercom", x);
+        
+    }
+    else
+    localStorage.setItem("iusercl", x); 
 }
