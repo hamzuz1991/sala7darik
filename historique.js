@@ -61,12 +61,12 @@ function checkabonnement(a, aa, f){
             }
         }
         else{    
-            window.location.href = "ijam3ana.html";        
+            window.location.href = "inscricomm.html";        
         }
     }
 function deconexion (){
     localStorage.removeItem("idcom");
-    window.location.href= "ijam3ana.html";
+    window.location.href= "inscricomm.html";
 }
 function historique(){
     var reserv = JSON.parse(localStorage.getItem("reservation"));
