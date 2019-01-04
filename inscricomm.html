@@ -18,7 +18,7 @@
     <script src="ijma3ana.js"></script>
 </head>
 
-<body class="bcl" onload="badel()">
+<body>
     <div class="inn">
         <div class="h-control">
             <div class="h-logoo">
@@ -37,8 +37,8 @@
                             <a>Ija m3ana</a>
                             <div class="dropdownn-content">
                                 <ul id="inputStatut">
-                                    <li><a href="#" class="a-dropdownn" value="client">client</a></li>
-                                    <li><a href="#" class="a-dropdownn" value="commercant">commercant</a></li>
+                                    <li><a href="inscriclient.html" class="a-dropdownn" value="client">client</a></li>
+                                    <li><a href="inscricomm.html" class="a-dropdownn" value="commercant">commercant</a></li>
                                 </ul>
                             </div>
                         </dic>
@@ -52,8 +52,12 @@
             <tr>
                 <td class="part1">
                     <p class="en">
-                        <b class="ee"> A</b>vec nous vous pouvez trouver  qui vous aie  a bricoler ta maison juste   il faut inscrir  et recherche que vous voulez
+                        <b class="ee"> A</b>vec nous vous serez plus reconnu et vous aide
+                        a enrichere votre porte veulle par des neauveaux clients
+                        Notre site vous Offre une une periode d'essai 3 mois gratuit pour les agens qu'il veul nour
+                        rejoundre.
                     </p>
+
 
                     <form class="sin">
                         <div class="form-group">
@@ -72,11 +76,11 @@
                             <label class="form-check-label" for="exampleCheck1">Check me out</label>
                         </div>
                         <div class="but">
-                            <button onclick="loginn()"  type="submit" class="btn btn-outline-dark">Submit</button> <b>OU</b>
+                            <button onclick="loginn()" type="submit" class="btn btn-outline-dark">Submit</button> <b>OU</b>
 
-                            <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">
+                            <button  type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">
                                 Inscrire
-                            </button> </div>
+                            </button> <pi id="ess"></p> </div>
                     </form>
                 </td>
                 <td>
@@ -89,8 +93,8 @@
                     <h5 class="modal-title" id="exampleModalLabel">Welcome</h5>
 
                     <div class="modal-body">
-                            <p  id="logcol"></p>
-                        <div id="login1" class="login">
+                        <p id="logcom"></p>
+                        <div id="login" class="login">
                             <form>
                                 <div class="form-row">
 
@@ -103,44 +107,43 @@
                                         <input type="text" class="form-control" id="inputlastname" placeholder="lastname">
                                     </div>
 
-
                                     <div id="comm" class="form-group col-md-6">
 
-                                            <label for="inputState">Domaines*</label>
-                                            <select onchange="domaine()" id="inputselectdom" class="form-control">
-                                                <option selected> </option>
-                                                <option value="Electrique">Electrique </option>
-                                                <option value="Planperie">Planperie</option>
-                                                <option value="Peinture">Peinture</option>
-                                                <option value="Batiment">Batiment</option>
-                                                <option value="autres">autre</option>
-                                            </select>
-                                        </div>
-                                        <div id="comm1" class="form-group col-md-4">
-    
-                                            <label for="inputState">Proffession*</label>
-                                            <select id="inputState1" class="form-control">
-                                                <option selected> </option>
-                                                <option>
-                                                    <p id="p1"></p>
-                                                </option>
-                                                <option>
-                                                    <p id="p2"></p>
-                                                </option>
-                                                <option>
-                                                    <p id="p3"></p>
-                                                </option>
-                                                <option>
-                                                    <p id="p3"></p>
-                                                </option>
-                                                <option>
-                                                    <p id="p4"></p>
-                                                </option>
-                                                <option>
-                                                    <p id="p5"></p>
-                                                </option>
-                                            </select>
-                                        </div>
+                                        <label for="inputState">Domaines*</label>
+                                        <select onchange="domaine()" id="inputselectdom" class="form-control">
+                                            <option selected> </option>
+                                            <option value="Electrique">Electrique </option>
+                                            <option value="Planperie">Planperie</option>
+                                            <option value="Peinture">Peinture</option>
+                                            <option value="Batiment">Batiment</option>
+                                            <option value="autres">autre</option>
+                                        </select>
+                                    </div>
+                                    <div id="comm1" class="form-group col-md-4">
+
+                                        <label for="inputState">Proffession*</label>
+                                        <select id="inputState1" class="form-control">
+                                            <option selected> </option>
+                                            <option>
+                                                <p id="p1"></p>
+                                            </option>
+                                            <option>
+                                                <p id="p2"></p>
+                                            </option>
+                                            <option>
+                                                <p id="p3"></p>
+                                            </option>
+                                            <option>
+                                                <p id="p3"></p>
+                                            </option>
+                                            <option>
+                                                <p id="p4"></p>
+                                            </option>
+                                            <option>
+                                                <p id="p5"></p>
+                                            </option>
+                                        </select>
+                                    </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Email*</label>
@@ -156,11 +159,11 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputTel">Tel.portable*</label>
-                                        <input type="text" class="form-control" id="inputTel.portable" placeholder="Tel.portable">
+                                        <input type="text" class="form-control" id="inputTel.portable" placeholder="Tel.portable"> <p id="ptel"></p>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputtelf">Tel.fix</label>
-                                        <input type="text" class="form-control" id="inputTel.fix" placeholder="Tel.fix"> <p id="ptel"></p>
+                                        <input type="text" class="form-control" id="inputTel.fix" placeholder="Tel.fix">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -196,19 +199,21 @@
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="gridCheck">
                                         <label class="form-check-label" for="gridCheck">
-
-                                            <p> Attention . apres chaque resarvation realise il faut donner votre avis
-                                                pour nous aider a vous donnez le meilleur rtoujours </p>
+                                            <p > Attention . on cas votre abbonment sera expire votre profil
+                                                sera invisible jusq'au
+                                                vous
+                                                changer
+                                                votre status d'abbonement </p>
+                                          
                                         </label>
                                     </div>
                                 </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button onclick="verifform2()" type="button" class="btn btn-primary" id="save">Save </button>
+                            <button onclick="verifform()" type="button" class="btn btn-primary" id="save">Save </button>
                             <p id="sign"></p>
                         </div>
-                        </form>
 
                     </div>
                 </div>
