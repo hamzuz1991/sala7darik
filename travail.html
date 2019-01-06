@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="travail.css" />
     <script src="travail.js"></script>
 </head>
-<body onload="checkid()">
+<body onload="checkid(), chargeReservationProche(), reservationproche ()">
     <div class="header-control">
         <div class="header-logo">
             <img src="Media/fff.png" class="logo-control"><p>Sallah Darek</p>
@@ -41,12 +41,14 @@
     </div>
     <div class="content-control-res">
         <h1>Vos reservations proches </h1>        
-        <div id="info-res-planifie">
-        </div>
+        <div id="info-res-planifie"></div>
     </div>
     <div class="res-tocheck">
         <h1>Les resérvations proposées</h1>
-        <div class="res-propo"></div>
+        <div id="res-propo">
+            <h1></h1>
+            <p></p>
+        </div>
     </div>
     <div class="detail-res">
         <h1>Détail réservation</h1>

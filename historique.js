@@ -29,10 +29,12 @@ function checkabonnement(a, aa, f){
         localStorage.setItem("tab", JSON.stringify(commer));
     }
     function checkid(){
-        var lc = localStorage.getItem("idcom");
-        var idc = JSON.parse(lc);
+        var ak = localStorage.getItem("iuser");
+        var idcc = JSON.parse(ak);
         var clist = localStorage.getItem("tab");
         var colist = JSON.parse(clist);
+        lc = colist[idcc].id ; 
+        idc = lc;
         var cd = new Date();
         if (lc){
         document.getElementById("ppnom").innerHTML = colist[idc].lastname ;
@@ -65,12 +67,16 @@ function checkabonnement(a, aa, f){
         }
     }
 function deconexion (){
-    localStorage.removeItem("idcom");
+    localStorage.removeItem("iuser");
     window.location.href= "inscricomm.html";
 }
 function historique(){
     var reserv = JSON.parse(localStorage.getItem("reservation"));
-    var lc = localStorage.getItem("idcom");
+    var ak = JSON.parse(localStorage.getItem("iuser"));
+    var comm = JSON.parse(localStorage.getItem("tab"));
+    console.log(ak);
+    var lc = comm[ak].id;
+    console.log(lc);
     for (i=0; i<reserv.length; i++){        
         if (reserv[i].idCommercant == lc){
             if (reserv[i].etatReservation == 2){
