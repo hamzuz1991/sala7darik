@@ -82,3 +82,6 @@
     text-shadow: 2px 2px rgb(97, 96, 94);
     margin-top: 70px;
 }
+.first-abonnement span, .second-abonnement span, .third-abonnement span, .forth-abonnement span{
+    cursor: pointer;
+}

@@ -28,44 +28,54 @@ function checkabonnement(a, aa, f){
             }
         }
         localStorage.setItem("tab", JSON.stringify(commer));
-    }
-    function checkid(){
-        var lc = localStorage.getItem("idcom");
-        var idc = JSON.parse(lc);
-        var clist = localStorage.getItem("tab");
-        var colist = JSON.parse(clist);
-        var cd = new Date();
-        if (lc){
-        document.getElementById("ppnom").innerHTML = colist[idc].lastname ;
-        document.getElementById("ppmetier").innerHTML = colist[idc].profession;
-        document.getElementById("ppemail").innerHTML = colist[idc].email;
-            for (i=0; i<colist.length; i++){
-                if (colist[i].id == idc){
-                    if (colist[i].abonnement != null){
-                        if (checkabonnement(colist[i].abonnement, colist[i].dateAbonnement, colist[i].forfait)){
-                            document.getElementById("ppabon").innerHTML = "Actif";
-                            document.getElementById("ppabon").style.color = "Green";                      
-                        }
+}
+function checkid(){
+    var ak = localStorage.getItem("iuser");
+    var idcc = JSON.parse(ak);
+    var clist = localStorage.getItem("tab");
+    var colist = JSON.parse(clist);
+    lc = colist[idcc].id ; 
+    idc = lc;
+    var cd = new Date();
+    if (lc){
+    document.getElementById("ppnom").innerHTML = colist[idc].lastname ;
+    document.getElementById("ppmetier").innerHTML = colist[idc].profession;
+    document.getElementById("ppemail").innerHTML = colist[idc].email;
+        for (i=0; i<colist.length; i++){
+            if (colist[i].id == idc){
+                if (colist[i].abonnement != null){
+                    if (checkabonnement(colist[i].abonnement, colist[i].dateAbonnement, colist[i].forfait)){
+                        document.getElementById("ppabon").innerHTML = "Actif";
+                        document.getElementById("ppabon").style.color = "Green";                      
+                    }
+                }
+                else{
+                    if (colist[i].abonnement == null){
+                        createabonnement(idc, 3);
                     }
                     else{
-                        if (colist[i].abonnement == null){
-                            createabonnement(idc, 3);
-                        }
-                        else{
-                            localStorage.setItem("msg", "Votre abonnement à expiré");
-                            document.getElementById("ppabon").innerHTML = "Innactif";
-                            document.getElementById("ppabon").style.color = "Red";
-                            
-                        }
+                        localStorage.setItem("msg", "Votre abonnement à expiré");
+                        document.getElementById("ppabon").innerHTML = "Innactif";
+                        document.getElementById("ppabon").style.color = "Red";
+                        
                     }
                 }
             }
         }
-        else{    
-            window.location.href = "inscricomm.html";        
-        }
     }
-    function deconexion (){
-        localStorage.removeItem("idcom");
-        window.location.href= "inscricomm.html";
+    else{    
+        window.location.href = "inscricomm.html";        
     }
+}
+function deconexion (){
+    localStorage.removeItem("iuser");
+    window.location.href= "inscricomm.html";
+}
+
+function updateabon (a){
+    var lc  = JSON.parse(localStorage.getItem("iuser"));
+    var comm = JSON.parse(localStorage.tab);     
+    console.log(comm[lc].forfait);
+    comm[lc].forfait = comm[lc].forfait + a;     
+    console.log(comm[lc].forfait);
+}

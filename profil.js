@@ -30,10 +30,13 @@ function createabonnement(id, f){
     localStorage.setItem("tab", JSON.stringify(commer));
 }
 function checkid(){
-    var lc = localStorage.getItem("idcom");
-    var idc = JSON.parse(lc);
+    var ak = localStorage.getItem("iuser");
+    var idcc = JSON.parse(ak);
     var clist = localStorage.getItem("tab");
     var colist = JSON.parse(clist);
+    lc = colist[ak].id ; 
+    idc = lc;
+    console.log(idc);
     var cd = new Date();
     if (lc){
     document.getElementById("ppnom").innerHTML = colist[idc].lastname ;
@@ -79,6 +82,6 @@ function checkid(){
     }
 }
 function deconexion (){
-    localStorage.removeItem("idcom");
+    localStorage.removeItem("iuser");
     window.location.href= "inscricomm.html";
 }
