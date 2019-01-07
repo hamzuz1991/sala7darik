@@ -189,6 +189,8 @@ function confirmer_res(a){
             doc.style.display = "none";
             console.log("OK");
             console.log(resrv[i].etatReservation);
+            
         }
     }
+    localStorage.setItem("reservation", JSON.stringify(resrv));
 }
