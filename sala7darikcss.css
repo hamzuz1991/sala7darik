@@ -20,7 +20,7 @@ body{
     background-image: url("bgi.jpg");
     background-position: center;
     background-repeat: no-repeat;
- 
+    position: relative;
     
 }
 .bo3{
@@ -258,7 +258,7 @@ width: 10%;
 .n-bar2 
 {float: right;
   
-    color: #070707;
+    color: #ffffff;
     
     margin: 10px;
 }
@@ -267,8 +267,9 @@ width: 10%;
     width: 200px ;
 }
 .ajou{
-    width: 200px ;
-    margin-top: 20px;
+    width: 100px ;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .plus
 {
@@ -277,3 +278,77 @@ width: 10%;
     height: 20px;
 
 }
+.dropdown-item
+{
+    color: #070707;
+}
+
+.h1-control{
+    width: 100%;
+    height: 12%;
+    
+    background: rgba(105, 103, 103, 0.6);
+    padding:  20px 0 10px 20%;   
+    text-decoration: none; 
+
+}
+.h1-control ul li{
+    display: inline;
+    list-style-type: none;
+    border-radius: 100px; 
+    text-decoration: none; 
+   
+}
+
+.h1-control a{
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 10px 10px;
+
+    font-family: FreeMono;
+    font-style: italic;
+    transition: 1s;
+}
+
+.info-control{
+    margin-left: 20px;
+    width: 80%;
+    height: 3%;
+    background: rgba(105, 103, 103, 0.3);
+    padding: 0px 0px;;
+}
+.info-control ul li{
+    display: inline;
+       
+    font-size: 13px;
+    padding: 0px 0px 0px 10px;
+}
+.info-control p{
+  
+   margin-left: 20px;
+    color: black;
+    text-shadow: 1.5px 1.5px rgb(97, 96, 94);
+    font-size: 20px;
+   
+}
+.info-control h3{
+    text-decoration: none;
+    color: white;
+    font-family: FreeMono;
+    font-style: italic;  
+    font-size: 23px;
+ 
+    text-shadow: 2px 2px rgb(97, 96, 94);
+}
+.prof1
+{
+    width: 50%;
+    margin-top: 10px;
+}
+.prof2
+{
+    width: 50%;
+}
+.modif
+{margin-left:1140px;}
