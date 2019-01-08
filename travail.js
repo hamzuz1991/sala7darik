@@ -179,6 +179,7 @@ function Annuler_res(a){
             console.log(resrv[i].etatReservation);
         }
     }
+    localStorage.setItem("reservation", JSON.stringify(resrv));
 }
 function confirmer_res(a){
     var resrv = JSON.parse(localStorage.reservation);
