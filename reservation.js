@@ -68,7 +68,6 @@ function verif_comm(){
             doc.style.display = "block";
             k = true;            
             localStorage.setItem("ll", JSON.stringify(comm[i].id));
-            break;
         }
     }
     if (k == false){
@@ -84,31 +83,56 @@ function verif_reservation(a){
     var bday = dateres.slice(8,10);
     var dres = new Date(byear, bmonth-1, bday);
     var ddd = new Date();
-    var c = JSON.parse(localStorage.getItem("reservation"));
-    if (dres>ddd){
-        for (i=0; i<c.length; i++){
-            if (c[i].idCommercant == a){
-                var rd = (c[i].date_reservation);
-                byear = rd.slice(0,4);
-                bmonth = rd.slice(5,7);
-                bday = rd.slice(8,10);
-                var nd = new Date(byear, bmonth-1, bday);
-                if (exist_day(nd, dres, heureres, c[i].heurereservation)){
-                    return true;
-                } 
-                
+    var c = JSON.parse(localStorage.getItem("reservation")); 
+    var ccom = true;
+    console.log(c);
+    if (dres > ddd){
+        console.log("entree1");
+        for (j=0; j<c.length; j++){
+            if (c[j].idCommercant == a){
+                ccom = false;
+                break;
+            }
+        }
+        if (ccom){
+            console.log("entree2");
+            var rd = (c[i].date_reservation);
+            byear = rd.slice(0,4);
+            bmonth = rd.slice(5,7);
+            bday = rd.slice(8,10);
+            var nd = new Date(byear, bmonth-1, bday);
+            if (exist_day(nd, dres, heureres, c[i].heurereservation)){
+                console.log("entree3");
+                return true;
+            }
+            else{
+                return false;
+            }             
+        }
+        else{
+            for (i=0; i<c.length; i++){
+                if (c[i].idCommercant == a){
+                    console.log("entree2");
+                    var rd = (c[i].date_reservation);
+                    byear = rd.slice(0,4);
+                    bmonth = rd.slice(5,7);
+                    bday = rd.slice(8,10);
+                    var nd = new Date(byear, bmonth-1, bday);
+                    if (exist_day(nd, dres, heureres, c[i].heurereservation)){
+                        console.log("entree3");
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }                 
+                }
             }
         }
     }
 }
 function exist_day(a, b, c, d){
-  if ((a.getFullYear() != b.getFullYear())&&(a.getMonth() != b.getMonth())&&(a.getDate() != b.getDate())){
-      if (c != d){
-          return true;
-      }
-      else{
-          return false;
-      }
+  if ((a.getFullYear() != b.getFullYear())||(a.getMonth() != b.getMonth())||(a.getDate() != b.getDate())||(c != d)){
+    return true;         
   }
   else{
     return false;
@@ -116,12 +140,63 @@ function exist_day(a, b, c, d){
 }
 function reserver(){
     var id = JSON.parse(localStorage.getItem("ll"));
+    var idclient = JSON.parse(localStorage.getItem("idclient"));
     localStorage.removeItem("tt");
+    var tab = JSON.parse(localStorage.getItem("reservation")); 
+    var tab2 = JSON.parse(localStorage.getItem("client"));
     var dateres = document.getElementById("dateres").value;
     var heureres = document.getElementById("heureres").value;
     var detailres = document.getElementById("detailres").value;
-    if ((dateres !="")&&(heureres != "")&&(detailres !="")){
-       var k = verif_reservation(id);
+    for (i=0; i<tab2.length; i++){
+        if (tab2[i].id == id){
+            var lieu = tab2[i].gouvernement;
+            break;
+        }
+    }
+    var doc = document.getElementById("msg");
+    var byear = dateres.slice(0,4);
+    var bmonth = dateres.slice(5,7);
+    var bday = dateres.slice(8,10);
+    var dres = new Date(byear, bmonth-1, bday);
+    var ddd = new Date();
+    if ((dateres) && (heureres) && (detailres) && (dres > ddd)){   
+        console.log(id) ;
+        var vr =  verif_reservation(id);
+       if (vr){
+        id_reservation = Math.floor((Math.random() * 1000) + 1);
+        doc.innerHTML = ""; 
+        var res = {idReservation : id_reservation,
+                   idCommercant : id,
+                   idClient : idclient,
+                   etatReservation : 0,
+                   heurereservation : heureres,
+                   date_reservation : dateres,
+                   lieuReservation : lieu,
+                   detailReservation : detailres };
+        if (tab){
+            tab.push(res);
+            localStorage.setItem("reservation", JSON.stringify(tab));
+            window.location.href = "index.html";
+        }
+        else{
+            tab = [];
+            tab.push(res);
+            localStorage.setItem("reservation", JSON.stringify(tab));
+            window.location.href = "index.html";
+        }
+       }
+       else{
+        doc.innerHTML = "Il existe déja une réservation pour cette date et heure";           
+       }
+    }
+    else if ((dateres == "") || (dres < ddd)){
+        doc.innerHTML = "Veuillez vérifier la date de la reservation";
+    }
+    else if (heureres == ""){
+        doc.innerHTML = "veuillez vérifier l'heure de la reservation";
+    }
+    else {
+        doc.innerHTML = "Veuillez vérifier la partie détail de la reservation";
     }
 }
 function affiche_res(i){
@@ -129,4 +204,9 @@ function affiche_res(i){
     doc1.style.display = "block";   
     document.getElementById("btn3").style.display = "block";
     document.getElementById(`span${i}`).style.backgroundColor = "black";
+    for (j=0; j<10; j++){
+        if (i != j){
+            document.getElementById(`span${j}`).style.background = "none";            
+        }
+    }
 }
