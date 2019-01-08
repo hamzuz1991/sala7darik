@@ -265,11 +265,11 @@ width: 10%;
 .naz
 {
     width: 200px ;
+
 }
 .ajou{
     width: 100px ;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  top: 5%;
 }
 .plus
 {
@@ -352,3 +352,15 @@ width: 10%;
 }
 .modif
 {margin-left:1140px;}
+.move 
+{ width:160px;
+   
+    background-color: rgb(97, 96, 94,0.3);
+ margin-bottom: 350px;
+ 
+}
+
+.espacce
+{ width: 100%;
+    height: 10px;
+}
