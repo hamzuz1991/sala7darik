@@ -4,9 +4,11 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Espace client</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="logo.png" />
     <link rel="stylesheet" type="text/css" media="screen" href="sala7darikcss.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="historique1.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -18,84 +20,277 @@
     <script src="ijma3ana.js"></script>
 </head>
 
-<body class="bo3">
-    <div class="h-control">
+<body onload="profil()" class="bo3">
+    <div class="h1-control">
         <div class="h-logoo">
             <img src="fff.png" class="logoo-control">
             <p>Sallah Darek</p>
         </div>
-        
+
         <div class="n-bar2">
-            <ul >
-                   
-            <li>Nom: <a></a></li>
-            <li>Prenom: <a ></a></li>
-                <li ><div class="btn-group" role="group"></div>
-                        <button id="btnGroupDrop1" type="button" class="btn btn-Warning btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                               Profil
-                              </button>
-                              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                <a class="dropdown-item" href="#">mon Profil</a>
-                                <a class="dropdown-item" href="#">Deconnecter</a>
-                              </div>
-                            </div>
+            <ul>
+
+                <li>Nom: <a id="n.client"></a></li>
+                <li>Prenom: <a id="p.client"></a></li>
+                <li>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-Warning dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Profil
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Deconnexion</a>
+                            <a class="dropdown-item" href="#">Mon profil</a>
+
+                        </div>
+                    </div>
+
                 </li>
-              
-                
+
+
+
             </ul>
         </div>
     </div>
+    </div>
+
+    <div class="ajou" id="ajou"> <br> <button type="button" class="btn btn-Warning btn-lg"><img src="plus3.png" alt="okus"
+                class="plus">
+            Ajouter reservation</button> 
+    </div>
+    <div class="espacce " id="espace"></div>
     <table>
-        <tr class="ajou"> <br>  <button type="button" class="btn btn-Warning btn-lg"><img src="plus3.png" alt="okus" class="plus"> Ajouter  reservation</button>  </tr>
         <tr>
             <td class="naz" rowspan="10">
-    <div class="btn-group-vertical" role="group" aria-label="Button group with nested dropdown">
-            <button type="button" class="btn btn-secondary btn-lg">1</button>
-            <button type="button" class="btn btn-secondary btn-lg">2</button>
-          
-            <div class="btn-group" role="group">
-              <button id="btnGroupDrop1" type="button" class="btn btn-secondary btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </button>
-              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                <a class="dropdown-item" href="#">Dropdown link</a>
-                <a class="dropdown-item" href="#">Dropdown link</a>
-              </div>
+                <div class="move">
+                    <div class="btn-group-vertical" role="group" aria-label="Button group with nested dropdown">
+                        <button onclick="mesresvation()" type="button" class="btn btn-secondary btn-lg">Mes reservation</button>
+                        <button onclick="historiques()" type="button" class="btn btn-secondary btn-lg">Historiques</button>
+
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#exampleModal"
+                                data-whatever="@getbootstrap">Reclamation</button>
+
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td id="prof1" class="prof1">
+                <div class="info-control">
+                    <ul>
+                        <li>
+                            <h3>Nom :</h3>
+                        </li>
+                        <li>
+                            <p id="n1.client"></p>
+                        </li>
+                        <li>
+                            <h3>Prenom: </h3>
+                        </li>
+                        <li>
+                            <p id="p1.client"></p>
+                        </li>
+                        <li>
+                            <h3>Adresse:</h3>
+                        </li>
+                        <li>
+                            <p id="a.client"></p>
+                        </li>
+
+                        <li>
+                            <h3>city:</h3>
+                        </li>
+                        <li>
+                            <p id="c.client"></p>
+                        </li>
+
+                    </ul>
+                </div>
+            </td>
+            <td id="prof2" class="prof2">
+                <div class="info-control">
+                    <ul>
+                        <li>
+                            <h3>Gouvernement:</h3>
+                        </li>
+                        <li>
+                            <p id="G.client"></p>
+                        </li>
+                        <li>
+                            <h3>C.postal:</h3>
+                        </li>
+                        <li>
+                            <p id="Postal.client"></p>
+                        </li>
+                        <li>
+                            <h3>Email: </h3>
+                        </li>
+                        <li>
+                            <p id="mail.client"></p>
+                        </li>
+                        <li>
+                            <h3>TEl.portable: </h3>
+                        </li>
+                        <li>
+                            <p id="tel.client"></p>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </td>
+        </tr>
+        <div class="modif" id="modif">
+            <button onclick="modifier1()" type="button" class="btn btn-Warning btn-lg" data-toggle="modal" data-target="#exampleModal2">
+                Modifier</button> </div>
+    </table>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Message:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div>
             </div>
-          </div>
-        </td>
-        <td>
-    <div class="info-control">
-        <ul>
-            <li>
-                <h1>Mr :</h1>
-            </li>
-            <li>
-                <p>Foulaine</p>
-            </li>
-            <li>
-                <h1>Métier: </h1>
-            </li>
-            <li>
-                <p>Eléctricien</p>
-            </li>
-            <li>
-                <h1>Abonnement</h1>
-            </li>
-            <li>
-                <p>Actif</p>
-            </li>
-            <li>
-                <h1>Email: </h1>
-            </li>
-            <li>
-                <p>foulaine@domaine.com</p>
-            </li>
-        </ul>
+        </div>
     </div>
-</td>
-  </tr>
-</table>
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <p id="namecomplet"></p>
+                    </h5>
+
+                    <div class="modal-body">
+                        <p id="logcol"></p>
+                        <div id="login11" class="login">
+                            <form>
+
+                                <div class="form-row">
+
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Email*</label>
+                                        <input onblur="verifemail()" type="email" class="form-control" id="inputEmail4"
+                                            placeholder="Email">
+                                        <p id="vemail"> </p>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPassword4">Mot de Passe*</label>
+                                        <input onblur="verifpass()" type="password" class="form-control" id="inputPassword4"
+                                            placeholder="Password">
+                                        <p id="vpass"> </p>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputTel">Tel.portable*</label>
+                                        <input type="text" class="form-control" id="inputTel.portable" placeholder="Tel.portable">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputtelf">Tel.fix</label>
+                                        <input type="text" class="form-control" id="inputTel.fix" placeholder="Tel.fix">
+                                        <p id="ptel"></p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress">Address*</label>
+                                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Address 2</label>
+                                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="inputCity">City*</label>
+                                        <input type="text" class="form-control" id="inputCity">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="inputState">Gouvernemt*</label>
+                                        <select id="inputState2" class="form-control">
+                                            <option selected>Choose...</option>
+                                            <option value="tunis">Tunis</option>
+                                            <option value="ariana">Ariana</option>
+                                            <option value=" ben arous">Ben Arous</option>
+                                            <option value="mannouba">Mannouba</option>
+                                            <option>autre</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="inputZip">C.Postal*</label>
+                                        <input type="text" class="form-control" id="inputZip">
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button onclick="refrech()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button onclick="modifier2()" type="button" class="btn btn-primary" id="save11">Save </button>
+                    <p id="sign"></p>
+                </div>
+                </form>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="espacce " id="espace"></div>
+
+    <div class="content-historique" id="histo">
+        <h1>Historique</h1>
+      
+       <p id="histo2"></p>
+    </div>
+
+    <div id="mesresv" class=" reservationvalider">
+        <h1>Mes reservation valider </h1>
+       
+        <p id="resvvl"></p>
+
+    </div>
+    <div id="mesresv2" class="reservationinvalider">
+        <h1>Mes reservation non valider </h1>
+      
+        <p id="resvinvl"></p>
+
+
+    </div>
+    <div class="content1-historique" id="detailleresv">
+      
+      <p id="resrvdet2"> </p>
+    </div>
+
+
 </body>
 
 </html>

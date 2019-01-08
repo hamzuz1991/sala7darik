@@ -1,0 +1,138 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="sala7darikcss.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="ijma3ana.js"></script>
+</head>
+
+<body class="body2">
+    <div class="inn">
+        <div class="h-control">
+            <div class="h-logoo">
+                <img src="fff.png" class="logoo-control">
+                <p>Sallah Darek</p>
+            </div>
+            <div class="n-bar">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li class="activ">
+                        <dic class="dropdownn">
+                            <a >SallaH Darek</a>
+                            <div class="dropdownn-content">
+                                <ul>
+                                    <li><a href="#" class="a-dropdownn">Reservez</a></li>
+                                    <li><a href="#" class="a-dropdownn">Consultez</a></li>
+                                </ul>
+                            </div>
+                        </dic>
+                    </li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li > <a href=""> Ija m3ana</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="consult">
+    <form class="form-inline">
+           <div class="par">Entrer votre identifient de votre reservation pour le consulter </div>
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="inputPassword2" class="sr-only">Password</label>
+              <input type="text" class="form-control" id="inputidreserv" placeholder="id reservation">
+            </div>
+            <button type="submit" class="btn btn-warning mb-2">consulter</button>
+          </form>
+        </div>
+        <table>
+        <tr>
+      <td>  <form class="info" >
+            numero reservation : <br>
+            <p class="rep" id="idreservation"></p>
+            Date : <br>
+            <p class="rep" id="date"></p>
+            Heure: <br>
+            <p class="rep" id="heure"></p>
+            Etat :
+            <p class="rep" id="etat"></p>
+        </form></td>
+        <td><form class="info"> 
+            
+                Nom client  : <br>
+                <p class="rep" id="nomclient"></p>
+                prenom client  : <br>
+                <p class="rep" id="prenomclient"></p>
+                Adresse: <br>
+                <p class="rep" id="adresseclient"></p>
+                Email :
+                <p class="rep" id="emailclient"></p>
+                Numero tel : :
+                <p class="rep" id="telclient"></p>
+            </form></td>
+            <td><form class="info"> 
+            
+                    Nom commercant  : <br>
+                    <p class="rep" id="nomclient"></p>
+                    prenom commercent  : <br>
+                    <p class="rep" id="prenomclient"></p>
+                    specialite commercent  : <br>
+                    <p class="rep" id="profession"></p>
+                    Adresse: <br>
+                    <p class="rep" id="adresseclient"></p>
+                    Email :
+                    <p class="rep" id="emailcommercant"></p>
+                    Numero tel : 
+                    <p class="rep" id="telclient"></p>
+                </form></td>
+            </tr>
+            </table>
+            <div class="but2">
+  
+                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">envoyer reclamation</button>
+            </div>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Recipient:</label>
+            <input type="text" class="form-control" id="emailcommercant">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </body>
+    <footer>
+    
+        copyright from FivePointPool
+    
+    </footer>
+    
+    </html>

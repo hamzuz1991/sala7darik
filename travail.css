@@ -37,7 +37,7 @@
 .res-tocheck:hover{
     border: 2px solid #FFD100;
 }
-.detail-res{
+#detail-res{
     display: none;
     position: absolute;
     left: 60%;
@@ -51,14 +51,22 @@
     overflow: auto;
     background: rgba(105, 103, 103, 0.2);
 }
-.detail-res:hover{
+.res-tocheck::-webkit-scrollbar {width: 10px;}
+.content-control-res::-webkit-scrollbar {width: 10px;}
+.res-tocheck::-webkit-scrollbar {width: 10px;}
+#detail-res:hover{
     border : 2px solid #FFD100;
 }
-.detail-res h1{
+#detail-res h1{
     color: white;
     font-family: FreeMono;
     font-size: 30px;
     font-style: italic;
+    text-shadow: 2px 2px rgb(97, 96, 94); 
+}
+#detail-res h2{
+    color: white;
+    font-family: FreeMono;
     text-shadow: 2px 2px rgb(97, 96, 94); 
 }
 .detail-reservation{
@@ -84,10 +92,56 @@
     font-style: italic;
     text-shadow: 2px 2px rgb(97, 96, 94); 
 }
+
 .res-tocheck h1 {
     color: white;
     font-family: FreeMono;
     font-size: 30px;
     font-style: italic;
     text-shadow: 2px 2px rgb(97, 96, 94);
+}
+.content-control-res h2, p, .res-tocheck h2, p{
+    color: white;
+    font-family: FreeMono;
+    text-shadow: 2px 2px rgb(97, 96, 94);
+}
+.content-control-res span{
+    color: white;
+    font-family: FreeMono;
+    text-shadow: 2px 2px rgb(97, 96, 94);
+    cursor: pointer;
+    text-decoration: underline;
+}
+.content-control-res span:hover{
+    color: #FFD100;
+}
+.select-control{
+    width: 20px;
+    height: 20px;
+}
+.res-tocheck span{
+    color: white;
+    font-family: FreeMono;
+    text-shadow: 2px 2px rgb(97, 96, 94);
+    cursor: pointer;
+    text-decoration: underline;
+}
+.res-tocheck span:hover{
+    color: #FFD100;
+}
+.btn2{
+    font-family: FreeMono;
+    border : 1px solid white;
+    background: rgba(105, 103, 103, 0.6);
+    color: white;
+    font-size : 20px;
+    text-align: center;
+    cursor : pointer;
+    width: 100px;
+    height: 40px;
+    transition: 1s;
+}
+.btn2:hover{
+    border:  1px solid #FFD100;
+    color: #FFD100;
 }
