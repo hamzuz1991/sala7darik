@@ -1,0 +1,55 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Reservation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="reservation.css"/>
+    <script src="reservation.js"></script>
+</head>
+<body onload="verif_user ()">    
+    <div class="header-control">
+        <div class="header-logo">
+                <img src="Media/fff.png" class="logo-control"><p>Sallah Darek</p>
+            </div>
+        <div class="nav-bar"></div>  
+        <div class="nav-bar-button">
+                <button class="btn" onclick="deconexion()">Déconnexion</button>
+        </div>          
+    </div>
+    <div class="info-control">
+        <ul>
+            <li><h1>Mr :</h1></li>
+            <li><p id="ppnom"></p></li>
+            <li><h1>Email: </h1></li>
+            <li><p id="ppemail"></p></li>
+            <li><h1>Ville: </h1></li>
+            <li><p id="ppville"></p></li>
+        </ul>
+    </div>
+    <div class="select-comm-job">
+        <h2>Veuillez selectinner domaine souhaité :</h2>
+        <select onchange="verif_job()" class="select-job" id="sjob">
+            <option selected>...</option>
+            <option>Electrique</option>
+            <option>Planberie</option>
+            <option>Peinture</option>
+            <option>Bâtimenet</option>
+            <option>Autre</option>
+        </select>
+        <div id="prof"></div>
+    </div>
+    <div class="comm-info" id="cinfo"></div>
+    <div class="afficher-reservation" id="affres">
+        <h2>Date réservation: </h2><input type="date" class="input-style" id="dateres"/></br>
+        <h2>Heure réservation : </h2><input type="time" class="input-style" id="heureres"/></br>
+        <h2>Détail resérvation: </h2></br><textarea class="input-style2" id="detailres"></textarea>
+    </div>
+    <div class="reservation-btn" id="btn3">
+        <button class="bttn1" onclick="reserver()">Confirmer</button>
+        <button class="bttn2" onclick="annuler()">Annuler</button>
+        <p id="msg"></p>
+    </div>
+</body>
+</html>
