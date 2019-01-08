@@ -76,27 +76,13 @@ function mytab() {
     var email = document.getElementById('inputEmail4').value;
     var Tfixe = document.getElementById('inputTel.fix').value;
     var aresse2 = document.getElementById('inputAddress2').value;
-    var code  = Math.floor((Math.random() * 100000) + 1);
-
-    USER = {
-        id : code ,
-        email: email,
-        name: nom,
-        lastname: prenom,
-        key: password,
-        Adress: adress,
-        gouvernement: gouv,
-        numero: tel,
-        codepostal: codep,
-        city : cite,
-        telfixe:Tfixe,
-        Adresssec:aresse2,
-    }
+    var code = Math.floor((Math.random() * 100000) + 1);
 
 
-    if (doma !== "")
-        USER = {
-            id : code ,
+
+    if (doma !== "") {
+        USERc = {
+            id: code,
             email: email,
             name: nom,
             lastname: prenom,
@@ -107,18 +93,45 @@ function mytab() {
             codepostal: codep,
             domain: doma,
             profession: spec,
-            city : cite,
-            telfixe:Tfixe,
-        Adresssec:aresse2,
+            city: cite,
+            telfixe: Tfixe,
+            Adresssec: aresse2,
         }
-    var tuser = JSON.parse(localStorage.getItem("tab")) || [];
-    if (tuser == null) {
-        tuser = [];
+        var tuserc = JSON.parse(localStorage.getItem("tabc")) || [];
+        if (tuserc == null) {
+            tuserc = [];
+        }
+        tuserc.push(USERc);
+        console.log(USERc);
+        localStorage.setItem("tabc", JSON.stringify(tuserc));
+        console.log(tuserc);
     }
-    tuser.push(USER);
-    console.log(USER);
-    localStorage.setItem("tab", JSON.stringify(tuser));
-    console.log(tuser);
+    else {
+
+        USER = {
+            id: code,
+            email: email,
+            name: nom,
+            lastname: prenom,
+            key: password,
+            Adress: adress,
+            gouvernement: gouv,
+            numero: tel,
+            codepostal: codep,
+            city: cite,
+            telfixe: Tfixe,
+            Adresssec: aresse2,
+        }
+
+        var tuser = JSON.parse(localStorage.getItem("tab")) || [];
+        if (tuser == null) {
+            tuser = [];
+        }
+        tuser.push(USER);
+        console.log(USER);
+        localStorage.setItem("tab", JSON.stringify(tuser));
+        console.log(tuser);
+    }
 
 }
 
@@ -247,7 +260,7 @@ function veriftel() {
     }
 }
 function loginn() {
-   
+
     var mail = document.getElementById('exampleInputEmail1').value;
     console.log(mail);
     var pass = document.getElementById('exampleInputPassword1').value;
@@ -255,31 +268,53 @@ function loginn() {
     if ((mail == "") || (pass == "")) { alert(" login ou/et mp vide"); }
     else {
         var tuser = JSON.parse(localStorage.getItem("tab"));
+
         console.log(tuser);
         for (let i = 0; i < tuser.length; i++) {
-            console.log(tuser[i]);
+           
 
             if ((tuser[i].email == mail) && (tuser[i].key == pass)) {
-               
+ console.log(tuser[i]);
                 localStorage.setItem("iuser", i);
-                ientif();
-                return true;
+                 return true;
+               
             }
+
             else {
-                alert(" login ou/et mot passe invalie");
-                return false;
+                document.getElementById('itenf1').innerHTML =" login ou/et mot passe invalie"
+               console.log(" login ou/et mot passe invalie");
+               itenf
             }
         }
     }
 }
-function ientif(){
-    var x = localStorage.getItem("iuser");
-    console.log(x);
-    var tuser = JSON.parse(localStorage.getItem("tab"));
-    if (tuser[x].dom!==""){
-        localStorage.setItem("iusercom", x);
-        
+
+
+function loginn2() {
+
+    var mail = document.getElementById('exampleInputEmail1').value;
+    console.log(mail);
+    var pass = document.getElementById('exampleInputPassword1').value;
+    console.log(pass);
+    if ((mail == "") || (pass == "")) { alert(" login ou/et mp vide"); }
+    else {
+
+        var tuserc = JSON.parse(localStorage.getItem("tabc"));
+        console.log(tuserc);
+
+        for (let i = 0; i < tuserc.length; i++) {
+
+
+            if ((tuserc[i].email == mail) && (tuserc[i].key == pass)) {
+
+                localStorage.setItem("iuserc", i);
+
+                return true;
+            }
+            else {
+               
+                document.getElementById('itenf').innerHTML =" login ou/et mot passe invalie"
+            }
+        }
     }
-    else
-    localStorage.setItem("iusercl", x); 
 }
