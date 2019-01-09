@@ -315,6 +315,7 @@ function loginn2() {
 
                 localStorage.setItem("iduserc", tuserc[i].id);
                 console.log("true")
+                window.open("profil.html", "_self", "", "")
                 return true;
             } else {
 
