@@ -20,7 +20,7 @@
    
     font-size: 35px;
     font-style: italic;
-    color: rgb(0, 0, 0);
+    color: white;
     text-shadow: 1px 1px rgb(97, 96, 94);
 }
 .content-historique h2{
@@ -35,7 +35,7 @@
 .content-historique p{
     
     font-size: 18px;
-    color: white;
+    color: black;
     text-shadow: 1.5px 1.5px rgb(97,96,94);
 }
 .reservationvalider
@@ -72,7 +72,7 @@
    
     font-size: 30px;
     font-style: italic;
-    color: rgb(0, 0, 0);
+    color: white;
     text-shadow: 1px 1px rgb(97, 96, 94);
 }
 .reservationinvalider h2{
@@ -87,7 +87,7 @@
 .reservationinvalider p{
     
     font-size: 18px;
-    color: white;
+    color: black;
     text-shadow: 1.5px 1.5px rgb(97,96,94);
 }
 
@@ -96,7 +96,7 @@
    
     font-size: 30px;
     font-style: italic;
-    color: rgb(0, 0, 0);
+    color: white;
     text-shadow: 1px 1px rgb(97, 96, 94);
 }
 .reservationvalider h2{
@@ -111,7 +111,7 @@
 .reservationvalider p{
     
     font-size: 18px;
-    color: white;
+    color: black;
     text-shadow: 1.5px 1.5px rgb(97,96,94);
 }
 .content1-historique {

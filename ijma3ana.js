@@ -146,7 +146,7 @@ function badel() {
 
     x2.style.display = "none";
 
-
+    
 }
 
 
@@ -518,7 +518,7 @@ function historiques() {
 }
 
 function mesresvation() {
-    test();
+   
     var u = localStorage.getItem("iduser");
     var x = document.getElementById('prof1');
     var x1 = document.getElementById('prof2');
@@ -652,3 +652,7 @@ function test() {
 
 
 }
+
+function deco(){
+localStorage.removeItem("iduser");
+window.open("inscriclient.html", "_self", "", "")}
