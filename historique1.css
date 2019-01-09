@@ -12,6 +12,13 @@
     background: rgba(105, 103, 103, 0.2);
     
 }
+.azerty{
+    cursor : pointer;
+    text-decoration: underline;
+}
+.azerty:hover{
+    color: #FFD100;
+}
 .content-historique::-webkit-scrollbar {width: 10px;}
 .content-historique:hover{
     border: 2px solid #FFD100;
@@ -20,7 +27,7 @@
    
     font-size: 35px;
     font-style: italic;
-    color: white;
+    color: black;
     text-shadow: 1px 1px rgb(97, 96, 94);
 }
 .content-historique h2{
@@ -72,7 +79,7 @@
    
     font-size: 30px;
     font-style: italic;
-    color: white;
+    color: black;
     text-shadow: 1px 1px rgb(97, 96, 94);
 }
 .reservationinvalider h2{
@@ -96,7 +103,7 @@
    
     font-size: 30px;
     font-style: italic;
-    color: white;
+    color: black;
     text-shadow: 1px 1px rgb(97, 96, 94);
 }
 .reservationvalider h2{
@@ -133,7 +140,7 @@
    
     font-size: 35px;
     font-style: italic;
-    color: rgb(0, 0, 0);
+    color: white;
     text-shadow: 1px 1px rgb(97, 96, 94);
 }
 .content1-historique h2{

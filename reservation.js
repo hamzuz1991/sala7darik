@@ -28,6 +28,8 @@ function verif_job(){
     document.getElementById("prof").innerHTML = "...";
     document.getElementById("cinfo").style.display="none";
     document.getElementById("prof").style.display="none";
+    document.getElementById("affres").style.display="none";
+    document.getElementById("btn3").style.display="none";
     if (xx == "Electrique"){
         doc.style.display = "block";
         doc.innerHTML = `<h2>Veuillez selectinner la spécialité :</h2>

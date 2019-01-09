@@ -315,7 +315,7 @@ function loginn2() {
 
                 localStorage.setItem("iduserc", tuserc[i].id);
                 console.log("true")
-                window.open("profil.html", "_self", "", "")
+                window.open("profil.html","_self","","")
                 return true;
             } else {
 
@@ -485,13 +485,10 @@ function historiques() {
     y1.style.display = "block";
     y2.style.display = "block";
     var treserv = JSON.parse(localStorage.getItem("reservation"));
-   var  n = document.getElementById('resvvl');
-
+   var  n = document.getElementById('histo2');
     for (let i = 0; i < treserv.length; i++)
     {
-        if ((treserv[i].idclient == u) && (treserv[i].etatReservation == 2)) {
-         
-           
+        if ((treserv[i].idClient == u) && (treserv[i].etatReservation == 2)) {
             n.insertAdjacentHTML("afterend", `<p>etat: terminer`);
             n.insertAdjacentHTML("afterend", `<p>lieu:  ${treserv[i].lieuReservation}</p>`);
             n.insertAdjacentHTML("afterend", `<p>heure:  ${treserv[i].heurereservation}</p>`);
@@ -503,7 +500,7 @@ function historiques() {
     }
     for (let i = 0; i < treserv.length; i++)
     {
-        if ((treserv[i].idclient == u) && (treserv[i].etatReservation == 2)) {
+        if ((treserv[i].idClient == u) && (treserv[i].etatReservation == 2)) {
          
            
             n.insertAdjacentHTML("afterend", `<p>etat: terminer`);
@@ -545,9 +542,9 @@ function mesresvation() {
     var treserv = JSON.parse(localStorage.getItem("reservation"));
     for (let i = 0; i < treserv.length; i++) {
 
-        if ((treserv[i].idclient == u) && (treserv[i].etatReservation == 1)) {
+        if ((treserv[i].idClient == u) && (treserv[i].etatReservation == 1)) {
             n = document.getElementById('resvvl');
-            n.insertAdjacentHTML("afterend", `<p><span onclick="detaille(${treserv[i].idReservation},${treserv[i].idcom})" >affiche detaille</span></p>`);
+            n.insertAdjacentHTML("afterend", `<p><span onclick="detaille(${treserv[i].idReservation},${treserv[i].idCommercant})" >affiche detaille</span></p>`);
             n.insertAdjacentHTML("afterend", `<p>etat: valide`);
             n.insertAdjacentHTML("afterend", `<p>lieu:  ${treserv[i].lieuReservation}</p>`);
             n.insertAdjacentHTML("afterend", `<p>heure:  ${treserv[i].heurereservation}</p>`);
@@ -559,9 +556,9 @@ function mesresvation() {
 
 
 
-        if ((treserv[i].idclient == u) && (treserv[i].etatReservation == 0)) {
+        if ((treserv[i].idClient == u) && (treserv[i].etatReservation == 0)) {
             m = document.getElementById('resvinvl');
-            m.insertAdjacentHTML("afterend", `<a  onclick="detaille(${treserv[i].idReservation},${treserv[i].idCommercant})" >affiche detaille</a>`);
+            m.insertAdjacentHTML("afterend", `<span class="azerty" onclick="detaille(${treserv[i].idReservation},${treserv[i].idCommercant})" >affiche detaille</span>`);
             m.insertAdjacentHTML("afterend", `<p> etat: non valide</p>`);
             m.insertAdjacentHTML("afterend", `<p> lieu :  ${treserv[i].lieuReservation}</p>`);
             m.insertAdjacentHTML("afterend", `<p> heure:  ${treserv[i].heurereservation}</p>`);
