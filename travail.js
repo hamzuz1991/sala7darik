@@ -18,7 +18,7 @@ function checkabonnement(a, aa, f){
     }
 }
 function createabonnement(id, f){
-    var commer = JSON.parse(localStorage.tab);
+    var commer = JSON.parse(localStorage.tabc);
     for (j=0; j<commer.length; j++){
         if (id == commer[j].id){
             commer[j].abonnement = true;
@@ -27,23 +27,23 @@ function createabonnement(id, f){
             break;
         }
     }
-    localStorage.setItem("tab", JSON.stringify(commer));
+    localStorage.setItem("tabc", JSON.stringify(commer));
 }
 function checkid(){
-    var ak = localStorage.getItem("iuser");
+    var ak = localStorage.getItem("iduserc");
     var idcc = JSON.parse(ak);
-    var clist = localStorage.getItem("tab");
+    var clist = localStorage.getItem("tabc");
     var colist = JSON.parse(clist);
-    lc = colist[idcc].id ; 
+    lc = idcc; 
     idc = lc;
     var cd = new Date();
-    if (lc){
-    document.getElementById("ppnom").innerHTML = colist[idc].lastname ;
-    document.getElementById("ppmetier").innerHTML = colist[idc].profession;
-    document.getElementById("ppemail").innerHTML = colist[idc].email;
+    if (ak){
     /*pPartie profil content*/
         for (i=0; i<colist.length; i++){
-            if (colist[i].id == idc){
+            if (colist[i].id == idc){                
+                document.getElementById("ppnom").innerHTML = colist[i].lastname ;
+                document.getElementById("ppmetier").innerHTML = colist[i].profession;
+                document.getElementById("ppemail").innerHTML = colist[i].email;
                 if (colist[i].abonnement != null){
                     if (checkabonnement(colist[i].abonnement, colist[i].dateAbonnement, colist[i].forfait)){
                         document.getElementById("ppabon").innerHTML = "Actif";
@@ -69,13 +69,13 @@ function checkid(){
     }
 }
 function deconexion (){
-    localStorage.removeItem("iuser");
+    localStorage.removeItem("iduserc");
     window.location.href= "inscricomm.html";
 }
 function chargeReservationProche(){
-    var lc = JSON.parse(localStorage.getItem("iuser"));
-    var comm = JSON.parse(localStorage.getItem("tab"));
-    var idc = comm[lc].id;
+    var lc = JSON.parse(localStorage.getItem("iduserc"));
+    var comm = JSON.parse(localStorage.getItem("tabc"));
+    var idc = lc;
     var reser = JSON.parse(localStorage.getItem("reservation"));
     for (i=0; i<reser.length; i++){
         if (reser[i].idCommercant == idc){
@@ -94,9 +94,9 @@ function chargeReservationProche(){
     }
 }
 function reservationproche (){
-    var c = JSON.parse(localStorage.getItem("iuser"));
-    var com = JSON.parse(localStorage.getItem("tab"));
-    var idcom = com[c].id;
+    var c = JSON.parse(localStorage.getItem("iduserc"));
+    var com = JSON.parse(localStorage.getItem("tabc"));
+    var idcom = c;
     var res = JSON.parse(localStorage.getItem("reservation"));
     for (j=0; j<res.length; j++){
         if(res[j].idCommercant == idcom){
@@ -117,7 +117,7 @@ function reservationproche (){
 }
 function verifRes(a){
     var doc = document.getElementById("detail-res");
-    var clt = JSON.parse(localStorage.getItem("client"));
+    var clt = JSON.parse(localStorage.getItem("tab"));
     doc.style.display = "block";
     var reser = JSON.parse(localStorage.getItem("reservation"));
     for (i=0; i<reser.length; i++){
@@ -144,7 +144,7 @@ function confirmres(a){
     var doc = document.getElementById("detail-res");
     doc.style.display = "block";
     var reser = JSON.parse(localStorage.getItem("reservation"));
-    var clt = JSON.parse(localStorage.getItem("client"));
+    var clt = JSON.parse(localStorage.getItem("tab"));
 
     for (i=0; i<reser.length; i++){
         if (reser[i].idReservation == a){
@@ -175,8 +175,6 @@ function Annuler_res(a){
         if (resrv[i].idReservation == a){
             resrv[i].etatReservation = 3;
             doc.style.display = "none";
-            console.log("OK");
-            console.log(resrv[i].etatReservation);
         }
     }
 }
@@ -187,8 +185,6 @@ function confirmer_res(a){
         if (resrv[i].idReservation == a){
             resrv[i].etatReservation = 1;
             doc.style.display = "none";
-            console.log("OK");
-            console.log(resrv[i].etatReservation);
             
         }
     }

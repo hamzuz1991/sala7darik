@@ -1,11 +1,10 @@
 function deconexion(){
-    localStorage.removeItem("idclient");
+    localStorage.removeItem("iduser");
     window.location.href= "inscriclient.html";
 }
 function verif_user (){
-    var user = JSON.parse(localStorage.getItem("client"));
-    var id = JSON.parse(localStorage.getItem("idclient"));
-
+    var user = JSON.parse(localStorage.getItem("tab"));
+    var id = JSON.parse(localStorage.getItem("iduser"));
     if (id){
         for (i=0; i<user.length; i++){
             if (user[i].id == id){
@@ -49,9 +48,9 @@ function verif_job(){
     }
 }
 function verif_comm(){
-    var clt = JSON.parse(localStorage.getItem("client"));
-    var id = JSON.parse(localStorage.getItem("idclient"));
-    var comm = JSON.parse(localStorage.getItem("tab"));
+    var clt = JSON.parse(localStorage.getItem("tab"));
+    var id = JSON.parse(localStorage.getItem("iduser"));
+    var comm = JSON.parse(localStorage.getItem("tabc"));
     doc = document.getElementById("cinfo");
     document.getElementById("cinfo").innerHTML = "";
     for (i=0; i<clt.length; i++){
@@ -85,9 +84,7 @@ function verif_reservation(a){
     var ddd = new Date();
     var c = JSON.parse(localStorage.getItem("reservation")); 
     var ccom = true;
-    console.log(c);
     if (dres > ddd){
-        console.log("entree1");
         for (j=0; j<c.length; j++){
             if (c[j].idCommercant == a){
                 ccom = false;
@@ -95,14 +92,12 @@ function verif_reservation(a){
             }
         }
         if (ccom){
-            console.log("entree2");
             var rd = (c[i].date_reservation);
             byear = rd.slice(0,4);
             bmonth = rd.slice(5,7);
             bday = rd.slice(8,10);
             var nd = new Date(byear, bmonth-1, bday);
             if (exist_day(nd, dres, heureres, c[i].heurereservation)){
-                console.log("entree3");
                 return true;
             }
             else{
@@ -112,14 +107,12 @@ function verif_reservation(a){
         else{
             for (i=0; i<c.length; i++){
                 if (c[i].idCommercant == a){
-                    console.log("entree2");
                     var rd = (c[i].date_reservation);
                     byear = rd.slice(0,4);
                     bmonth = rd.slice(5,7);
                     bday = rd.slice(8,10);
                     var nd = new Date(byear, bmonth-1, bday);
                     if (exist_day(nd, dres, heureres, c[i].heurereservation)){
-                        console.log("entree3");
                         return true;
                     }
                     else{
@@ -140,10 +133,10 @@ function exist_day(a, b, c, d){
 }
 function reserver(){
     var id = JSON.parse(localStorage.getItem("ll"));
-    var idclient = JSON.parse(localStorage.getItem("idclient"));
+    var idclient = JSON.parse(localStorage.getItem("iduser"));
     localStorage.removeItem("tt");
     var tab = JSON.parse(localStorage.getItem("reservation")); 
-    var tab2 = JSON.parse(localStorage.getItem("client"));
+    var tab2 = JSON.parse(localStorage.getItem("tab"));
     var dateres = document.getElementById("dateres").value;
     var heureres = document.getElementById("heureres").value;
     var detailres = document.getElementById("detailres").value;
@@ -159,8 +152,7 @@ function reserver(){
     var bday = dateres.slice(8,10);
     var dres = new Date(byear, bmonth-1, bday);
     var ddd = new Date();
-    if ((dateres) && (heureres) && (detailres) && (dres > ddd)){   
-        console.log(id) ;
+    if ((dateres) && (heureres) && (detailres) && (dres > ddd)){ 
         var vr =  verif_reservation(id);
        if (vr){
         id_reservation = Math.floor((Math.random() * 1000) + 1);
@@ -209,4 +201,7 @@ function affiche_res(i){
             document.getElementById(`span${j}`).style.background = "none";            
         }
     }
+}
+function annuler(){
+    window.location.href="reservation.html";
 }

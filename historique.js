@@ -16,32 +16,32 @@ function checkabonnement(a, aa, f){
         }
     }
 }
-    function createabonnement(id, f){
-        var commer = JSON.parse(localStorage.tab);
-        for (j=0; j<commer.length; j++){
-            if (id == commer[j].id){
-                commer[j].abonnement = true;
-                commer[j].dateAbonnement = new Date();
-                commer[j].forfait = f;
-                break;
-            }
+function createabonnement(id, f){
+    var commer = JSON.parse(localStorage.tabc);
+    for (j=0; j<commer.length; j++){
+        if (id == commer[j].id){
+            commer[j].abonnement = true;
+            commer[j].dateAbonnement = new Date();
+            commer[j].forfait = f;
+            break;
         }
-        localStorage.setItem("tab", JSON.stringify(commer));
     }
+    localStorage.setItem("tabc", JSON.stringify(commer));
+}
     function checkid(){
-        var ak = localStorage.getItem("iuser");
+        var ak = localStorage.getItem("iduserc");
         var idcc = JSON.parse(ak);
-        var clist = localStorage.getItem("tab");
+        var clist = localStorage.getItem("tabc");
         var colist = JSON.parse(clist);
-        lc = colist[idcc].id ; 
+        lc = idcc ; 
         idc = lc;
         var cd = new Date();
-        if (lc){
-        document.getElementById("ppnom").innerHTML = colist[idc].lastname ;
-        document.getElementById("ppmetier").innerHTML = colist[idc].profession;
-        document.getElementById("ppemail").innerHTML = colist[idc].email;
+        if (ak){
             for (i=0; i<colist.length; i++){
-                if (colist[i].id == idc){
+                if (colist[i].id == idc){                    
+                    document.getElementById("ppnom").innerHTML = colist[i].lastname ;
+                    document.getElementById("ppmetier").innerHTML = colist[i].profession;
+                    document.getElementById("ppemail").innerHTML = colist[i].email;
                     if (colist[i].abonnement != null){
                         if (checkabonnement(colist[i].abonnement, colist[i].dateAbonnement, colist[i].forfait)){
                             document.getElementById("ppabon").innerHTML = "Actif";
@@ -67,20 +67,17 @@ function checkabonnement(a, aa, f){
         }
     }
 function deconexion (){
-    localStorage.removeItem("iuser");
+    localStorage.removeItem("iduserc");
     window.location.href= "inscricomm.html";
 }
 function historique(){
     var reserv = JSON.parse(localStorage.getItem("reservation"));
-    var ak = JSON.parse(localStorage.getItem("iuser"));
-    var comm = JSON.parse(localStorage.getItem("tab"));
-    console.log(ak);
-    var lc = comm[ak].id;
-    console.log(lc);
+    var ak = JSON.parse(localStorage.getItem("iduserc"));
+    var comm = JSON.parse(localStorage.getItem("tabc"));
+    var lc = ak;
     for (i=0; i<reserv.length; i++){        
         if (reserv[i].idCommercant == lc){
-            if (reserv[i].etatReservation == 2){
-                
+            if (reserv[i].etatReservation == 2){                
             var doc = document.getElementById("info-historique");
             var h1 = document.createElement("h2");
             var h1t = document.createTextNode("Reservation N° " + reserv[i].idReservation);
