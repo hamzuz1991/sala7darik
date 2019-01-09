@@ -18,7 +18,7 @@ if (a){
 }
 }
 function createabonnement(id, f){
-    var commer = JSON.parse(localStorage.tab);
+    var commer = JSON.parse(localStorage.tabc);
     for (j=0; j<commer.length; j++){
         if (id == commer[j].id){
             commer[j].abonnement = true;
@@ -27,36 +27,34 @@ function createabonnement(id, f){
             break;
         }
     }
-    localStorage.setItem("tab", JSON.stringify(commer));
+    localStorage.setItem("tabc", JSON.stringify(commer));
 }
 function checkid(){
-    var ak = localStorage.getItem("iuser");
+    var ak = localStorage.getItem("iduserc");
     var idcc = JSON.parse(ak);
     var clist = localStorage.getItem("tab");
     var colist = JSON.parse(clist);
-    lc = colist[ak].id ; 
+    lc = idcc; 
     idc = lc;
-    console.log(idc);
-    var cd = new Date();
-    if (lc){
-    document.getElementById("ppnom").innerHTML = colist[idc].lastname ;
-    document.getElementById("ppmetier").innerHTML = colist[idc].profession;
-    document.getElementById("ppemail").innerHTML = colist[idc].email;
-    /*pPartie profil content*/
-    document.getElementById("pnom").innerHTML = colist[idc].name +"</br>";
-    document.getElementById("pprenom").innerHTML= colist[idc].lastname +"</br>";
-    document.getElementById("pdomaine").innerHTML= colist[idc].domain +"</br>";
-    document.getElementById("pprpfession").innerHTML= colist[idc].profession +"</br>";
-    document.getElementById("pemail").innerHTML = colist[idc].email +"</br>";
-    document.getElementById("ptelp").innerHTML= colist[idc].numero +"</br>";
-    document.getElementById("ptef").innerHTML= colist[idc].numerofixe +"</br>";
-    document.getElementById("padr").innerHTML = colist[idc].Adress +"</br>";
-    document.getElementById("padr2").innerHTML = colist[idc].Adresse2 +"</br>";
-    document.getElementById("pcite").innerHTML = colist[idc].cite +"</br>";
-    document.getElementById("pgov").innerHTML = colist[idc].gouvernement +"</br>";
-    document.getElementById("pcp").innerHTML = colist[idc].codepostal +"</br>"; 
+    if (ak){ 
         for (i=0; i<colist.length; i++){
             if (colist[i].id == idc){
+                document.getElementById("ppnom").innerHTML = colist[i].lastname ;
+                document.getElementById("ppmetier").innerHTML = colist[i].profession;
+                document.getElementById("ppemail").innerHTML = colist[i].email;
+                /*pPartie profil content*/
+                document.getElementById("pnom").innerHTML = colist[i].name +"</br>";
+                document.getElementById("pprenom").innerHTML= colist[i].lastname +"</br>";
+                document.getElementById("pdomaine").innerHTML= colist[i].domain +"</br>";
+                document.getElementById("pprpfession").innerHTML= colist[i].profession +"</br>";
+                document.getElementById("pemail").innerHTML = colist[i].email +"</br>";
+                document.getElementById("ptelp").innerHTML= colist[i].numero +"</br>";
+                document.getElementById("ptef").innerHTML= colist[i].numerofixe +"</br>";
+                document.getElementById("padr").innerHTML = colist[i].Adress +"</br>";
+                document.getElementById("padr2").innerHTML = colist[i].Adresse2 +"</br>";
+                document.getElementById("pcite").innerHTML = colist[i].cite +"</br>";
+                document.getElementById("pgov").innerHTML = colist[i].gouvernement +"</br>";
+                document.getElementById("pcp").innerHTML = colist[i].codepostal +"</br>";
                 if (colist[i].abonnement != null){
                     if (checkabonnement(colist[i].abonnement, colist[i].dateAbonnement, colist[i].forfait)){
                         document.getElementById("ppabon").innerHTML = "Actif";
@@ -82,6 +80,6 @@ function checkid(){
     }
 }
 function deconexion (){
-    localStorage.removeItem("iuser");
+    localStorage.removeItem("iduserc");
     window.location.href= "inscricomm.html";
 }
