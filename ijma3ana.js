@@ -280,7 +280,7 @@ function loginn() {
             // window.open("espace%20client.html");
             console.log("true");
             document.getElementById('itenf1').innerHTML = ""
-
+            window.open("espace%20client.html", "_self", "", "")
             break;
 
 
@@ -483,10 +483,38 @@ function historiques() {
     y.style.display = "block";
     y1.style.display = "block";
     y2.style.display = "block";
+    var treserv = JSON.parse(localStorage.getItem("reservation"));
+   var  n = document.getElementById('resvvl');
 
+    for (let i = 0; i < treserv.length; i++)
+    {
+        if ((treserv[i].idclient == u) && (treserv[i].etatReservation == 2)) {
+         
+           
+            n.insertAdjacentHTML("afterend", `<p>etat: terminer`);
+            n.insertAdjacentHTML("afterend", `<p>lieu:  ${treserv[i].lieuReservation}</p>`);
+            n.insertAdjacentHTML("afterend", `<p>heure:  ${treserv[i].heurereservation}</p>`);
+            n.insertAdjacentHTML("afterend", `<p>date :  ${treserv[i].date_reservation}</p>`);
+            n.insertAdjacentHTML("afterend", `<p>detail :  ${treserv[i].detailReservation}</p>`);
+            n.insertAdjacentHTML("afterend", `<p><h2>Num de reservation :  ${treserv[i].idReservation} </h2></p>`);
+        
+        }
+    }
+    for (let i = 0; i < treserv.length; i++)
+    {
+        if ((treserv[i].idclient == u) && (treserv[i].etatReservation == 2)) {
+         
+           
+            n.insertAdjacentHTML("afterend", `<p>etat: terminer`);
+            n.insertAdjacentHTML("afterend", `<p>lieu:  ${treserv[i].lieuReservation}</p>`);
+            n.insertAdjacentHTML("afterend", `<p>heure:  ${treserv[i].heurereservation}</p>`);
+            n.insertAdjacentHTML("afterend", `<p>date :  ${treserv[i].date_reservation}</p>`);
+            n.insertAdjacentHTML("afterend", `<p>detail :  ${treserv[i].detailReservation}</p>`);
+            n.insertAdjacentHTML("afterend", `<p><h2>Num de reservation :  ${treserv[i].idReservation} </h2></p>`);
 
+        }
 
-
+}
 }
 
 function mesresvation() {
