@@ -21,26 +21,32 @@ function verif_user (){
 }
 function verif_job(){
     var xx = document.getElementById("sjob").value;
+    console.log(xx);
+    var doc = document.getElementById("prof");
     var doc2 = document.getElementById("cinfo");
-    doc = document.getElementById("prof");
     document.getElementById("cinfo").innerHTML = "";
+    document.getElementById("prof").innerHTML = "...";
+    document.getElementById("cinfo").style.display="none";
+    document.getElementById("prof").style.display="none";
     if (xx == "Electrique"){
+        doc.style.display = "block";
         doc.innerHTML = `<h2>Veuillez selectinner la spécialité :</h2>
                         <select onchange="verif_comm()" class="select-job" id="sprof">
                             <option selected>...</option>
-                            <option>Installation</option>
-                            <option>TV réparation</option>
-                            <option>Paraboliste</option>
-                            <option>Réparation éléctroménager</option></select>`;
+                            <option value="installation">Installation</option>
+                            <option value="TV.reparation">TV réparation</option>
+                            <option value="Praboliste">Paraboliste</option>
+                            <option value="Reparation.electromenager">Réparation éléctroménager</option></select>`;
     }
-    else if (xx =="Planberie"){
+    else if (xx =="Planperie"){
+        doc.style.display = "block";
         doc.innerHTML = `<h2>Veuillez selectinner la spécialité :</h2>
                         <select onchange="verif_comm()" class="select-job" id="sprof">
                             <option selected>...</option>
-                            <option>Canalisation</option>
-                            <option>Climatisation</option>
-                            <option>Chaudière</option>
-                            <option>Réparation installation</option></select>`;
+                            <option value="canalisation">Canalisation</option>
+                            <option value="climatisation">Climatisation</option>
+                            <option value="chaudiere">Chaudière</option>
+                            <option value="Reparation.installation">Réparation installation</option></select>`;
     }
     else if(xx == "..."){
         doc.innerHTML="";
@@ -51,6 +57,10 @@ function verif_comm(){
     var clt = JSON.parse(localStorage.getItem("tab"));
     var id = JSON.parse(localStorage.getItem("iduser"));
     var comm = JSON.parse(localStorage.getItem("tabc"));
+    var dom = (document.getElementById("sjob").value).toUpperCase();
+    var prof = (document.getElementById("sprof").value).toUpperCase();
+    console.log(dom);
+    console.log(prof);
     doc = document.getElementById("cinfo");
     document.getElementById("cinfo").innerHTML = "";
     for (i=0; i<clt.length; i++){
@@ -60,9 +70,9 @@ function verif_comm(){
     }
     var k= false;
     for (i=0; i<comm.length; i++){
-        if (ville == (comm[i].gouvernement).toUpperCase()){
+        if ((ville == (comm[i].gouvernement).toUpperCase()) && (dom == (comm[i].domain).toUpperCase())&& (prof == (comm[i].profession).toUpperCase())){
             doc.innerHTML += `<span id="span${i}" onclick="affiche_res(${i})"><p><h2>Nom: </h2><h3>${comm[i].lastname} ${comm[i].name}</h3>
-                                <h2>Adresse: </h2><h3>${comm[i].Adress}  ${comm[i].cite} ${comm[i].gouvernement} ${comm[i].codepostal}</h3>
+                                <h2>Adresse: </h2><h3>${comm[i].Adress}  ${comm[i].city} ${comm[i].gouvernement} ${comm[i].codepostal}</h3>
                                 <h2>Numéro tel: </h2><h3>${comm[i].numero}</h3></p></span> `;
             doc.style.display = "block";
             k = true;            
@@ -92,17 +102,7 @@ function verif_reservation(a){
             }
         }
         if (ccom){
-            var rd = (c[i].date_reservation);
-            byear = rd.slice(0,4);
-            bmonth = rd.slice(5,7);
-            bday = rd.slice(8,10);
-            var nd = new Date(byear, bmonth-1, bday);
-            if (exist_day(nd, dres, heureres, c[i].heurereservation)){
-                return true;
-            }
-            else{
-                return false;
-            }             
+            return true;                        
         }
         else{
             for (i=0; i<c.length; i++){
@@ -134,7 +134,7 @@ function exist_day(a, b, c, d){
 function reserver(){
     var id = JSON.parse(localStorage.getItem("ll"));
     var idclient = JSON.parse(localStorage.getItem("iduser"));
-    localStorage.removeItem("tt");
+    localStorage.removeItem("ll");
     var tab = JSON.parse(localStorage.getItem("reservation")); 
     var tab2 = JSON.parse(localStorage.getItem("tab"));
     var dateres = document.getElementById("dateres").value;
@@ -168,13 +168,13 @@ function reserver(){
         if (tab){
             tab.push(res);
             localStorage.setItem("reservation", JSON.stringify(tab));
-            window.location.href = "index.html";
+            window.location.href = "espace client.html";
         }
         else{
             tab = [];
             tab.push(res);
             localStorage.setItem("reservation", JSON.stringify(tab));
-            window.location.href = "index.html";
+            window.location.href = "espace client.html";
         }
        }
        else{

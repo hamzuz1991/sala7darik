@@ -38,9 +38,6 @@ function checkid(){
     idc = lc;
     var cd = new Date();
     if (ak){
-    document.getElementById("ppnom").innerHTML = colist[idc].lastname ;
-    document.getElementById("ppmetier").innerHTML = colist[idc].profession;
-    document.getElementById("ppemail").innerHTML = colist[idc].email;
         for (i=0; i<colist.length; i++){
             if (colist[i].id == idc){
                 document.getElementById("ppnom").innerHTML = colist[i].lastname ;

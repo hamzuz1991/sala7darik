@@ -32,7 +32,7 @@ function createabonnement(id, f){
 function checkid(){
     var ak = localStorage.getItem("iduserc");
     var idcc = JSON.parse(ak);
-    var clist = localStorage.getItem("tab");
+    var clist = localStorage.getItem("tabc");
     var colist = JSON.parse(clist);
     lc = idcc; 
     idc = lc;
@@ -49,10 +49,9 @@ function checkid(){
                 document.getElementById("pprpfession").innerHTML= colist[i].profession +"</br>";
                 document.getElementById("pemail").innerHTML = colist[i].email +"</br>";
                 document.getElementById("ptelp").innerHTML= colist[i].numero +"</br>";
-                document.getElementById("ptef").innerHTML= colist[i].numerofixe +"</br>";
+                document.getElementById("ptef").innerHTML= colist[i].telfixe +"</br>";
                 document.getElementById("padr").innerHTML = colist[i].Adress +"</br>";
-                document.getElementById("padr2").innerHTML = colist[i].Adresse2 +"</br>";
-                document.getElementById("pcite").innerHTML = colist[i].cite +"</br>";
+                document.getElementById("pcite").innerHTML = colist[i].city +"</br>";
                 document.getElementById("pgov").innerHTML = colist[i].gouvernement +"</br>";
                 document.getElementById("pcp").innerHTML = colist[i].codepostal +"</br>";
                 if (colist[i].abonnement != null){
