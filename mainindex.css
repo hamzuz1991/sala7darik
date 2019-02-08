@@ -134,7 +134,7 @@ body{
 /* AboutUs Page */
 .bg-text1{
   background: rgb(105, 103, 103);
-  background: rgba(105, 103, 103, 0.2);
+  background: rgba(105, 103, 103, 0.6);
   color: white;
   text-shadow: 2px 2px rgb(97, 96, 94);
   font-weight: bold;
@@ -165,7 +165,7 @@ body{
 }
 .bg-text2{
     background: rgb(105, 103, 103);
-    background: rgba(105, 103, 103, 0.2);
+    background: rgba(105, 103, 103, 0.6);
     color: white;
     text-shadow: 2px 2px rgb(97, 96, 94);
     font-weight: bold;
@@ -197,7 +197,7 @@ body{
 }
 .bg-text3{
 background: rgb(105, 103, 103);
-background: rgba(105, 103, 103, 0.2);
+background: rgba(105, 103, 103, 0.6);
 color: white;
 text-shadow: 2px 2px rgb(97, 96, 94);
 font-weight: bold;
