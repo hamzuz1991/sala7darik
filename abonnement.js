@@ -18,7 +18,7 @@ function checkabonnement(a, aa, f){
     }
     }
     function createabonnement(id, f){
-        var commer = JSON.parse(localStorage.tab);
+        var commer = JSON.parse(localStorage.tabc);
         for (j=0; j<commer.length; j++){
             if (id == commer[j].id){
                 commer[j].abonnement = true;
@@ -27,22 +27,22 @@ function checkabonnement(a, aa, f){
                 break;
             }
         }
-        localStorage.setItem("tab", JSON.stringify(commer));
+        localStorage.setItem("tabc", JSON.stringify(commer));
 }
 function checkid(){
-    var ak = localStorage.getItem("iuser");
+    var ak = localStorage.getItem("iduserc");
     var idcc = JSON.parse(ak);
-    var clist = localStorage.getItem("tab");
+    var clist = localStorage.getItem("tabc");
     var colist = JSON.parse(clist);
-    lc = colist[idcc].id ; 
+    lc = idcc; 
     idc = lc;
     var cd = new Date();
-    if (lc){
-    document.getElementById("ppnom").innerHTML = colist[idc].lastname ;
-    document.getElementById("ppmetier").innerHTML = colist[idc].profession;
-    document.getElementById("ppemail").innerHTML = colist[idc].email;
+    if (ak){
         for (i=0; i<colist.length; i++){
             if (colist[i].id == idc){
+                document.getElementById("ppnom").innerHTML = colist[i].lastname ;
+                document.getElementById("ppmetier").innerHTML = colist[i].profession;
+                document.getElementById("ppemail").innerHTML = colist[i].email;
                 if (colist[i].abonnement != null){
                     if (checkabonnement(colist[i].abonnement, colist[i].dateAbonnement, colist[i].forfait)){
                         document.getElementById("ppabon").innerHTML = "Actif";
@@ -68,14 +68,17 @@ function checkid(){
     }
 }
 function deconexion (){
-    localStorage.removeItem("iuser");
+    localStorage.removeItem("iduserc");
     window.location.href= "inscricomm.html";
 }
 
 function updateabon (a){
-    var lc  = JSON.parse(localStorage.getItem("iuser"));
-    var comm = JSON.parse(localStorage.tab);     
-    console.log(comm[lc].forfait);
-    comm[lc].forfait = comm[lc].forfait + a;     
-    console.log(comm[lc].forfait);
+    var lc  = JSON.parse(localStorage.getItem("iduserc"));
+    var comm = JSON.parse(localStorage.tabc);
+    for (i=0; i<comm.length; i++){
+        if (comm[i].id == lc){
+            comm[lc].forfait = comm[lc].forfait + a;
+        }
+    }
+     
 }

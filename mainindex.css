@@ -22,7 +22,7 @@ body{
     border-radius: 100px;    
 }
 .active{
-    color: rgb(233, 63, 33);
+    color: #FFD100;
     text-decoration: none;
     font-size: 25px;
     padding: 20px 20px;
@@ -30,10 +30,6 @@ body{
     font-family: FreeMono;
     font-style: italic;
     cursor: default;
-}
-.imgvb{
-    width: 20px;
-    height: 20px;
 }
 .header-control a{
     color: white;
@@ -47,7 +43,7 @@ body{
     transition: 1s;
 }
 .header-control a:hover {
-    color: rgb(233, 63, 33);
+    color: #FFD100;
 }
 .nav-bar{
     float: right;
